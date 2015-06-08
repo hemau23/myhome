@@ -230,3 +230,7 @@
 2015-06-06 14:52:58,027 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\myhome\forecasting\forecasting\src\main\resources
 2015-06-06 14:52:58,027 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2015-06-06 14:52:58,027 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\myhome\forecasting\forecasting\src\test\resources
+2015-06-07 18:40:27,719 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-06-07 18:40:27,719 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\myhome\forecasting\forecasting\src\main\resources
+2015-06-07 18:40:27,719 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-06-07 18:40:27,719 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\myhome\forecasting\forecasting\src\test\resources

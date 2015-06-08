@@ -247,7 +247,7 @@ catch (ParseException e) {
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <longProp name="ThreadGroup.start_time">1433169172000</longProp>
         <longProp name="ThreadGroup.end_time">1433169172000</longProp>
@@ -308,9 +308,9 @@ catch (ParseException e) {
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="filename">D:\program\apache-jmeter-2.13\bin\movieInformation.csv</stringProp>
           <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">true</boolProp>
-          <stringProp name="shareMode">shareMode.thread</stringProp>
-          <boolProp name="stopThread">true</boolProp>
+          <boolProp name="recycle">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
           <stringProp name="variableNames">movieName,movieNameCode</stringProp>
           <stringProp name="TestPlan.comments">D:\program\apache-jmeter-2.13\bin\movieInformation.csv</stringProp>
         </CSVDataSet>
@@ -1417,13 +1417,21 @@ try{
 			//			
 			String price= vars.get(&quot;seatInfo_&quot;+i+&quot;_g5&quot;);
 			String line = vars.get(&quot;avaialbleSeat&quot;);
-
+		     Pattern pattern1 = Pattern.compile(&quot;\\d+&quot;);
+		     Matcher matcher1 = pattern1.matcher(vars.get(&quot;seatInfo_&quot;+i+&quot;_g3&quot;));
+		     String seatClassCode= vars.get(&quot;seatCodeData_&quot;+i+&quot;_g1&quot;);
+		     String seatClassRowCode= vars.get(&quot;seatCodeData_&quot;+i+&quot;_g2&quot;);	
+		     String seatClassName= vars.get(&quot;seatInfo_&quot;+i+&quot;_g4&quot;);	
+		     if(matcher1.find()) {
+		     	seatClassCode= vars.get(&quot;seatInfo_&quot;+i+&quot;_g4&quot;);
+		   	     seatClassRowCode= vars.get(&quot;seatCodeData_&quot;+i+&quot;_g2&quot;);	
+		     }
 			//for(int j=1;j&lt;cnt; j++) {
-				String seatClassCode= vars.get(&quot;seatCodeData_&quot;+i+&quot;_g1&quot;);				
+							
 				log.info(seatClassCode +&quot;=&quot;+seatClass);
 				//if(seatClassCode.equals(seatClass)){
 				//log.info(&quot;EQUAL &quot;+seatClassCode +&quot;=&quot;+seatClass);
-					String seatClassRowCode= vars.get(&quot;seatCodeData_&quot;+i+&quot;_g2&quot;);
+					
 					Pattern pattern = Pattern.compile(&quot;:&quot;+seatClassRowCode+&quot;\\d+&quot;);
 					log.info(seatClassCode);
 					Matcher matcher = pattern.matcher(line);
@@ -1442,6 +1450,7 @@ try{
 					result.append(averageRating).append(&quot;,&quot;);
 					result.append(duration).append(&quot;,&quot;);
 					result.append(vote).append(&quot;,&quot;);
+					result.append(seatClassName).append(&quot;,&quot;);
 					result.append(seatClassCode).append(&quot;,&quot;);
 					result.append(price).append(&quot;,&quot;);
 					result.append(seat.toString());
