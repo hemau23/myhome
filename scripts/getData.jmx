@@ -1093,8 +1093,17 @@ SampleResult.setDataType( org.apache.jmeter.samplers.SampleResult.TEXT );
                 <stringProp name="RegexExtractor.match_number">-2</stringProp>
               </RegexExtractor>
               <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">occupied</stringProp>
+                <stringProp name="RegexExtractor.regex">&quot;(\d)&quot;,&quot;N&quot;,&quot;N&quot;,&quot;N&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NO occupied Info Found</stringProp>
+                <stringProp name="RegexExtractor.match_number">-2</stringProp>
+              </RegexExtractor>
+              <hashTree/>
             </hashTree>
-            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="getAvailableSeatChart" enabled="true">
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="getAvailableSeatChart  ${occupied_1_g1} " enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
                 <collectionProp name="Arguments.arguments">
                   <elementProp name="a" elementType="HTTPArgument">
@@ -1213,6 +1222,15 @@ SampleResult.setDataType( org.apache.jmeter.samplers.SampleResult.TEXT );
               <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
             </HTTPSamplerProxy>
             <hashTree>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">avaialbleSeat</stringProp>
+                <stringProp name="RegexExtractor.regex">strData&gt;(.*)&lt;/strData</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default">NO Response from available chart</stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
               <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="Referer" elementType="Header">
@@ -1257,15 +1275,6 @@ SampleResult.setDataType( org.apache.jmeter.samplers.SampleResult.TEXT );
                   </elementProp>
                 </collectionProp>
               </HeaderManager>
-              <hashTree/>
-              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
-                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-                <stringProp name="RegexExtractor.refname">avaialbleSeat</stringProp>
-                <stringProp name="RegexExtractor.regex">strData&gt;(.*)&lt;/strData</stringProp>
-                <stringProp name="RegexExtractor.template">$1$</stringProp>
-                <stringProp name="RegexExtractor.default">NO Response from available chart</stringProp>
-                <stringProp name="RegexExtractor.match_number">1</stringProp>
-              </RegexExtractor>
               <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
@@ -1335,6 +1344,7 @@ try{
 	    	String showTime= vars.get(&quot;TheaterCodeShowTime_&quot;+vars.get(&quot;cnt&quot;)+&quot;_g4&quot;);
 	    	
 		String movieName= vars.get(&quot;movieName&quot;);
+		String occupied= vars.get(&quot;occupied_1_g1&quot;);
 		String averageRating= vars.get(&quot;averageRating&quot;);
 		String duration= vars.get(&quot;duration&quot;);
 		String vote= vars.get(&quot;vote&quot;);
@@ -1372,7 +1382,7 @@ String theaterName= vars.get(&quot;theaterName_1_g1&quot;);
 				//log.info(&quot;EQUAL &quot;+seatClassCode +&quot;=&quot;+seatClass);
 					
 					Pattern pattern = Pattern.compile(&quot;:&quot;+seatClassRowCode+&quot;\\d+&quot;);
-					log.info(seatClassCode);
+					log.info(&quot;emant&quot;+seatClassRowCode);
 					Matcher matcher = pattern.matcher(line);
 					StringBuffer seat = new StringBuffer();		
 					while (matcher.find())
@@ -1396,6 +1406,8 @@ String theaterName= vars.get(&quot;theaterName_1_g1&quot;);
 					result.append(seatClassName).append(&quot;,&quot;);
 					result.append(seatClassCode).append(&quot;,&quot;);
 					result.append(price).append(&quot;,&quot;);
+					result.append(seatClassRowCode).append(&quot;,&quot;);
+					result.append(occupied).append(&quot;,&quot;);					
 					result.append(seat.toString());
 					result.append(&quot;\n&quot;);
 				}
