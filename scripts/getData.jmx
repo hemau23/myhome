@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="2.8" jmeter="2.13 r1665067">
+<jmeterTestPlan version="1.2" properties="2.6" jmeter="2.10 r1533061">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -43,7 +43,6 @@
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
-            <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
@@ -273,7 +272,6 @@ catch (ParseException e) {
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
-            <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
@@ -306,13 +304,13 @@ catch (ParseException e) {
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">C:\Users\Shubham Gupta\Desktop\PricingAnalytique\analysis\datafetch\apache-jmeter-2.13\bin\movieInformation.csv</stringProp>
+          <stringProp name="filename">D:\program\apache-jmeter-2.13\bin\movieInformation.csv</stringProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">false</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
           <stringProp name="variableNames">movieName,movieNameCode</stringProp>
-          <stringProp name="TestPlan.comments">C:\Users\Shubham Gupta\Desktop\PricingAnalytique\analysis\datafetch\apache-jmeter-2.13\bin\movieInformation.csv</stringProp>
+          <stringProp name="TestPlan.comments">D:\program\apache-jmeter-2.13\bin\movieInformation.csv</stringProp>
         </CSVDataSet>
         <hashTree/>
         <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
@@ -1382,13 +1380,8 @@ String theaterName= vars.get(&quot;theaterName_1_g1&quot;);
 				//log.info(&quot;EQUAL &quot;+seatClassCode +&quot;=&quot;+seatClass);
 					
 					//Pattern pattern = Pattern.compile(&quot;:&quot;+seatClassRowCode+&quot;\\d+&quot;);
-<<<<<<< HEAD
-					Pattern pattern = Pattern.compile(&quot;\\|(\\w+:\\w+:&quot;+seatClassRowCode+&quot;.*&quot;+seatClassRowCode+&quot;...)\\|&quot;);
-
-=======
 					Pattern pattern = Pattern.compile(&quot;\\|(.:.:&quot;+seatClassRowCode+&quot;.*&quot;+seatClassRowCode+&quot;...)\\|&quot;);
 					
->>>>>>> d9d8cde94e498de5a0cdae32201a8f4abe4e3ec6
 					log.info(&quot;emant&quot;+seatClassRowCode);
 					Matcher matcher = pattern.matcher(line);
 					StringBuffer seat = new StringBuffer();		
@@ -1620,7 +1613,6 @@ catch (ParseException e) {
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
-            <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
@@ -2610,7 +2602,6 @@ catch (ParseException e) {
         <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
-            <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
