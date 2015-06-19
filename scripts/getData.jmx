@@ -1381,7 +1381,9 @@ String theaterName= vars.get(&quot;theaterName_1_g1&quot;);
 				//if(seatClassCode.equals(seatClass)){
 				//log.info(&quot;EQUAL &quot;+seatClassCode +&quot;=&quot;+seatClass);
 					
-					Pattern pattern = Pattern.compile(&quot;:&quot;+seatClassRowCode+&quot;\\d+&quot;);
+					//Pattern pattern = Pattern.compile(&quot;:&quot;+seatClassRowCode+&quot;\\d+&quot;);
+					Pattern pattern = Pattern.compile(&quot;\\|(.:.:&quot;+seatClassRowCode+&quot;.*&quot;+seatClassRowCode+&quot;...)\\|&quot;);
+					
 					log.info(&quot;emant&quot;+seatClassRowCode);
 					Matcher matcher = pattern.matcher(line);
 					StringBuffer seat = new StringBuffer();		
@@ -1407,7 +1409,7 @@ String theaterName= vars.get(&quot;theaterName_1_g1&quot;);
 					result.append(seatClassCode).append(&quot;,&quot;);
 					result.append(price).append(&quot;,&quot;);
 					result.append(seatClassRowCode).append(&quot;,&quot;);
-					result.append(occupied).append(&quot;,&quot;);					
+					//result.append(occupied).append(&quot;,&quot;);					
 					result.append(seat.toString());
 					result.append(&quot;\n&quot;);
 				}
