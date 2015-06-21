@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="2.6" jmeter="2.10 r1533061">
+<jmeterTestPlan version="1.2" properties="2.8" jmeter="2.13 r1665067">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
       <stringProp name="TestPlan.comments"></stringProp>
@@ -43,6 +43,7 @@
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
+            <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
@@ -66,9 +67,11 @@
               <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
               <assertionsResultsToSave>0</assertionsResultsToSave>
               <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
             </value>
           </objProp>
           <objProp>
+            <name></name>
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
@@ -298,6 +301,7 @@ catch (ParseException e) {
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
+            <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
@@ -321,9 +325,11 @@ catch (ParseException e) {
               <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
               <assertionsResultsToSave>0</assertionsResultsToSave>
               <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
             </value>
           </objProp>
           <objProp>
+            <name></name>
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
@@ -1421,9 +1427,11 @@ String theaterName= vars.get(&quot;theaterName_1_g1&quot;);
 		     String seatClassCode= vars.get(&quot;seatCodeData_&quot;+i+&quot;_g1&quot;);
 		     String seatClassRowCode= vars.get(&quot;seatCodeData_&quot;+i+&quot;_g2&quot;);	
 		     String seatClassName= vars.get(&quot;seatInfo_&quot;+i+&quot;_g4&quot;);	
+		     String number=&quot;string&quot;;
 		     if(matcher1.find()) {
 		     	seatClassCode= vars.get(&quot;seatInfo_&quot;+i+&quot;_g4&quot;);
 		   	     seatClassRowCode= vars.get(&quot;seatCodeData_&quot;+i+&quot;_g2&quot;);	
+		   	     number=&quot;number&quot;;
 		     }
 			//for(int j=1;j&lt;cnt; j++) {
 							
@@ -1459,7 +1467,7 @@ String theaterName= vars.get(&quot;theaterName_1_g1&quot;);
 					result.append(seatClassCode).append(&quot;,&quot;);
 					result.append(price).append(&quot;,&quot;);
 					result.append(seatClassRowCode).append(&quot;,&quot;);
-					//result.append(occupied).append(&quot;,&quot;);					
+					result.append(number).append(&quot;,&quot;);					
 					result.append(seat.toString());
 					result.append(&quot;\n&quot;);
 				}
@@ -1665,6 +1673,7 @@ catch (ParseException e) {
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
+            <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
@@ -1688,9 +1697,11 @@ catch (ParseException e) {
               <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
               <assertionsResultsToSave>0</assertionsResultsToSave>
               <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
             </value>
           </objProp>
           <objProp>
+            <name></name>
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
@@ -2680,6 +2691,7 @@ catch (ParseException e) {
         <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
+            <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
@@ -2703,9 +2715,11 @@ catch (ParseException e) {
               <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
               <assertionsResultsToSave>0</assertionsResultsToSave>
               <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
             </value>
           </objProp>
           <objProp>
+            <name></name>
             <value class="SampleSaveConfiguration">
               <time>true</time>
               <latency>true</latency>
