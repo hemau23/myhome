@@ -1523,7 +1523,7 @@ String theaterName= vars.get(&quot;theaterName_1_g1&quot;);
 					result.append(certificate).append(&quot;,&quot;);
 					result.append(type).append(&quot;,&quot;);
 					result.append(directorName).append(&quot;,&quot;);
-					result.append(cast.replace(&quot;,&quot;,&quot;&quot;)).append(&quot;,&quot;);					
+					result.append(cast.replace(&quot;,&quot;,&quot;#&quot;)).append(&quot;,&quot;);					
 					result.append(seatClassName).append(&quot;,&quot;);
 					result.append(seatClassCode).append(&quot;,&quot;);
 					result.append(price).append(&quot;,&quot;);
