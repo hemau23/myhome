@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.analytique.hello.HelloControllerIT</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.analytique.hello.HelloControllerIT</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.analytique.hello.html">com.analytique.hello</a> &gt; HelloControllerIT</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.308s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">getHello</td>
+<td>0.308s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>17:14:16.317 [Test worker] DEBUG o.s.t.c.j.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.analytique.hello.HelloControllerIT].
+17:14:16.332 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating TestContextBootstrapper from class [org.springframework.test.context.web.WebTestContextBootstrapper]
+17:14:16.348 [Test worker] DEBUG o.s.t.c.w.WebTestContextBootstrapper - Found explicit ContextLoader class [org.springframework.boot.test.SpringApplicationContextLoader] for context configuration attributes [ContextConfigurationAttributes@4c2de452 declaringClass = 'com.analytique.hello.HelloControllerIT', classes = '{class com.analytique.config.Application}', locations = '{}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.boot.test.SpringApplicationContextLoader']
+17:14:16.354 [Test worker] DEBUG o.s.t.c.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.analytique.hello.HelloControllerIT]
+17:14:16.365 [Test worker] INFO  o.s.t.c.w.WebTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.boot.test.IntegrationTestPropertiesListener@179c12f5, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@15d39932, org.springframework.test.context.support.DirtiesContextTestExecutionListener@9de4068, org.springframework.test.context.transaction.TransactionalTestExecutionListener@60d9cfc3, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@17a57297]
+17:14:16.367 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.analytique.hello.HelloControllerIT]
+17:14:16.368 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.analytique.hello.HelloControllerIT]
+17:14:16.370 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.analytique.hello.HelloControllerIT]
+17:14:16.370 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.analytique.hello.HelloControllerIT]
+17:14:16.371 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.analytique.hello.HelloControllerIT]
+17:14:16.371 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.analytique.hello.HelloControllerIT]
+17:14:16.373 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.analytique.hello.HelloControllerIT]
+17:14:16.373 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.analytique.hello.HelloControllerIT]
+17:14:16.375 [Test worker] DEBUG o.s.test.util.ReflectionTestUtils - Getting field [mergedContextConfiguration] from target [[DefaultTestContext@58edd740 testClass = HelloControllerIT, testInstance = com.analytique.hello.HelloControllerIT@467576dd, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2b7a0361 testClass = HelloControllerIT, locations = '{}', classes = '{class com.analytique.config.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]]
+17:14:16.376 [Test worker] DEBUG o.s.test.util.ReflectionTestUtils - Setting field [propertySourceProperties] of type [null] on target [[WebMergedContextConfiguration@2b7a0361 testClass = HelloControllerIT, locations = '{}', classes = '{class com.analytique.config.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]] to value [[Ljava.lang.String;@51530159]
+17:14:16.376 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@58edd740 testClass = HelloControllerIT, testInstance = com.analytique.hello.HelloControllerIT@467576dd, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2b7a0361 testClass = HelloControllerIT, locations = '{}', classes = '{class com.analytique.config.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{server.port=0, org.springframework.boot.test.IntegrationTest=true}', resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]].
+17:14:16.452 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+17:14:16.459 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+17:14:16.459 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+17:14:16.460 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [integrationTest] PropertySource with search precedence immediately lower than [systemEnvironment]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.2.5.RELEASE)
+
+2015-09-10 17:14:16.776  INFO 7180 --- [    Test worker] com.analytique.hello.HelloControllerIT   : Starting HelloControllerIT on d79535 with PID 7180 (C:\WORKPLACE\MyRepo\myhome\productx\build\classes\test started by idnhej in C:\WORKPLACE\MyRepo\myhome\productx)
+2015-09-10 17:14:16.815  INFO 7180 --- [    Test worker] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7effe6d: startup date [Thu Sep 10 17:14:16 CDT 2015]; root of context hierarchy
+2015-09-10 17:14:17.944  INFO 7180 --- [    Test worker] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-09-10 17:14:18.087  INFO 7180 --- [    Test worker] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/idnhej/.gradle/caches/modules-2/files-2.1/org.springframework.integration/spring-integration-core/4.1.5.RELEASE/a20eae2af5e3a806136c6d8c9f4d51b01dc04d9e/spring-integration-core-4.1.5.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2015-09-10 17:14:18.091  INFO 7180 --- [    Test worker] o.s.i.config.IntegrationRegistrar        : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2015-09-10 17:14:18.635  INFO 7180 --- [    Test worker] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2015-09-10 17:14:18.638  INFO 7180 --- [    Test worker] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2015-09-10 17:14:19.766  INFO 7180 --- [    Test worker] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/C:/Users/idnhej/.gradle/caches/modules-2/files-2.1/org.springframework.integration/spring-integration-core/4.1.5.RELEASE/a20eae2af5e3a806136c6d8c9f4d51b01dc04d9e/spring-integration-core-4.1.5.RELEASE.jar!/META-INF/spring.integration.default.properties]
+2015-09-10 17:14:19.767  INFO 7180 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-10 17:14:19.767  INFO 7180 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-10 17:14:19.770  INFO 7180 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'messageBuilderFactory' of type [class org.springframework.integration.support.DefaultMessageBuilderFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-10 17:14:19.817  INFO 7180 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#4b7030cf' of type [class org.springframework.integration.channel.MessagePublishingErrorHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-10 17:14:19.817  INFO 7180 --- [    Test worker] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'taskScheduler'
+2015-09-10 17:14:19.818  INFO 7180 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'taskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-10 17:14:19.818  INFO 7180 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'integrationHeaderChannelRegistry' of type [class org.springframework.integration.channel.DefaultHeaderChannelRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-09-10 17:14:20.261  INFO 7180 --- [    Test worker] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 0 (http)
+2015-09-10 17:14:20.539  INFO 7180 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2015-09-10 17:14:20.540  INFO 7180 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.23
+2015-09-10 17:14:20.662  INFO 7180 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2015-09-10 17:14:20.662  INFO 7180 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3850 ms
+2015-09-10 17:14:21.022  INFO 7180 --- [ost-startStop-1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService  'metricsExecutor'
+2015-09-10 17:14:22.543  INFO 7180 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-09-10 17:14:22.549  INFO 7180 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'metricFilter' to: [/*]
+2015-09-10 17:14:22.551  INFO 7180 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-09-10 17:14:22.551  INFO 7180 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-09-10 17:14:22.551  INFO 7180 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2015-09-10 17:14:22.551  INFO 7180 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'applicationContextIdFilter' to: [/*]
+2015-09-10 17:14:22.705  INFO 7180 --- [    Test worker] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from class path resource [rest-default-messages.properties]
+2015-09-10 17:14:22.957  INFO 7180 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7effe6d: startup date [Thu Sep 10 17:14:16 CDT 2015]; root of context hierarchy
+2015-09-10 17:14:23.006  INFO 7180 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/]}&quot; onto public java.lang.String com.analytique.hello.HelloController.index()
+2015-09-10 17:14:23.007  INFO 7180 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/error]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2015-09-10 17:14:23.007  INFO 7180 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/error],produces=[text/html]}&quot; onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2015-09-10 17:14:23.044  INFO 7180 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-09-10 17:14:23.044  INFO 7180 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-09-10 17:14:23.076  INFO 7180 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-09-10 17:14:23.334  INFO 7180 --- [    Test worker] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/metrics/{name:.*}],methods=[GET]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2015-09-10 17:14:23.335  INFO 7180 --- [    Test worker] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/metrics],methods=[GET]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-09-10 17:14:23.339  INFO 7180 --- [    Test worker] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/dump],methods=[GET]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-09-10 17:14:23.339  INFO 7180 --- [    Test worker] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/configprops],methods=[GET]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-09-10 17:14:23.339  INFO 7180 --- [    Test worker] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/autoconfig],methods=[GET]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-09-10 17:14:23.339  INFO 7180 --- [    Test worker] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/env/{name:.*}],methods=[GET]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2015-09-10 17:14:23.339  INFO 7180 --- [    Test worker] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/env],methods=[GET]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-09-10 17:14:23.341  INFO 7180 --- [    Test worker] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/health]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
+2015-09-10 17:14:23.341  INFO 7180 --- [    Test worker] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/mappings],methods=[GET]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-09-10 17:14:23.341  INFO 7180 --- [    Test worker] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/beans],methods=[GET]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-09-10 17:14:23.341  INFO 7180 --- [    Test worker] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/info],methods=[GET]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-09-10 17:14:23.341  INFO 7180 --- [    Test worker] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped &quot;{[/trace],methods=[GET]}&quot; onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-09-10 17:14:23.442  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerAdapter   : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7effe6d: startup date [Thu Sep 10 17:14:16 CDT 2015]; root of context hierarchy
+2015-09-10 17:14:23.463  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/{id}],methods=[GET]}&quot; onto public org.springframework.http.ResponseEntity&lt;org.springframework.hateoas.Resource&lt;?&gt;&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2015-09-10 17:14:23.463  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/{id}],methods=[PUT]}&quot; onto public org.springframework.http.ResponseEntity&lt;? extends org.springframework.hateoas.ResourceSupport&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.putItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.PersistentEntityResource,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2015-09-10 17:14:23.463  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}],methods=[OPTIONS]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.optionsForCollectionResource(org.springframework.data.rest.webmvc.RootResourceInformation)
+2015-09-10 17:14:23.464  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}],methods=[HEAD]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.headCollectionResource(org.springframework.data.rest.webmvc.RootResourceInformation) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2015-09-10 17:14:23.464  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}],methods=[GET]}&quot; onto public org.springframework.hateoas.Resources&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getCollectionResource(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.support.DefaultedPageable,org.springframework.data.domain.Sort,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.data.rest.webmvc.ResourceNotFoundException,org.springframework.web.HttpRequestMethodNotSupportedException
+2015-09-10 17:14:23.464  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}],methods=[GET],produces=[application/x-spring-data-compact+json || text/uri-list]}&quot; onto public org.springframework.hateoas.Resources&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.getCollectionResourceCompact(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.support.DefaultedPageable,org.springframework.data.domain.Sort,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.data.rest.webmvc.ResourceNotFoundException,org.springframework.web.HttpRequestMethodNotSupportedException
+2015-09-10 17:14:23.464  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}],methods=[POST]}&quot; onto public org.springframework.http.ResponseEntity&lt;org.springframework.hateoas.ResourceSupport&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.postCollectionResource(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.PersistentEntityResource,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2015-09-10 17:14:23.467  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/{id}],methods=[OPTIONS]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.optionsForItemResource(org.springframework.data.rest.webmvc.RootResourceInformation)
+2015-09-10 17:14:23.467  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/{id}],methods=[HEAD]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.headForItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable) throws org.springframework.web.HttpRequestMethodNotSupportedException
+2015-09-10 17:14:23.467  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/{id}],methods=[PATCH]}&quot; onto public org.springframework.http.ResponseEntity&lt;org.springframework.hateoas.ResourceSupport&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.patchItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.data.rest.webmvc.PersistentEntityResource,java.io.Serializable,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws org.springframework.web.HttpRequestMethodNotSupportedException,org.springframework.data.rest.webmvc.ResourceNotFoundException
+2015-09-10 17:14:23.467  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/{id}],methods=[DELETE]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryEntityController.deleteItemResource(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable) throws org.springframework.data.rest.webmvc.ResourceNotFoundException,org.springframework.web.HttpRequestMethodNotSupportedException
+2015-09-10 17:14:23.468  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/],methods=[GET]}&quot; onto public org.springframework.http.HttpEntity&lt;org.springframework.data.rest.webmvc.RepositoryLinksResource&gt; org.springframework.data.rest.webmvc.RepositoryController.listRepositories()
+2015-09-10 17:14:23.468  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/],methods=[OPTIONS]}&quot; onto public org.springframework.http.HttpEntity&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryController.optionsForRepositories()
+2015-09-10 17:14:23.468  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/],methods=[HEAD]}&quot; onto public org.springframework.http.ResponseEntity&lt;?&gt; org.springframework.data.rest.webmvc.RepositoryController.headForRepositories()
+2015-09-10 17:14:23.473  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/{id}/{property}],methods=[GET]}&quot; onto public org.springframework.http.ResponseEntity&lt;org.springframework.hateoas.ResourceSupport&gt; org.springframework.data.rest.webmvc.RepositoryPropertyReferenceController.followPropertyReference(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,java.lang.String,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws java.lang.Exception
+2015-09-10 17:14:23.473  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/{id}/{property}/{propertyId}],methods=[GET]}&quot; onto public org.springframework.http.ResponseEntity&lt;org.springframework.hateoas.ResourceSupport&gt; org.springframework.data.rest.webmvc.RepositoryPropertyReferenceController.followPropertyReference(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,java.lang.String,java.lang.String,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws java.lang.Exception
+2015-09-10 17:14:23.474  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/{id}/{property}],methods=[DELETE]}&quot; onto public org.springframework.http.ResponseEntity&lt;? extends org.springframework.hateoas.ResourceSupport&gt; org.springframework.data.rest.webmvc.RepositoryPropertyReferenceController.deletePropertyReference(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,java.lang.String) throws java.lang.Exception
+2015-09-10 17:14:23.475  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/{id}/{property}],methods=[GET],produces=[application/x-spring-data-compact+json || text/uri-list]}&quot; onto public org.springframework.http.ResponseEntity&lt;org.springframework.hateoas.ResourceSupport&gt; org.springframework.data.rest.webmvc.RepositoryPropertyReferenceController.followPropertyReferenceCompact(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,java.lang.String,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler) throws java.lang.Exception
+2015-09-10 17:14:23.475  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/{id}/{property}],methods=[PATCH || PUT],consumes=[application/json || application/x-spring-data-compact+json || text/uri-list]}&quot; onto public org.springframework.http.ResponseEntity&lt;? extends org.springframework.hateoas.ResourceSupport&gt; org.springframework.data.rest.webmvc.RepositoryPropertyReferenceController.createPropertyReference(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.http.HttpMethod,org.springframework.hateoas.Resources&lt;java.lang.Object&gt;,java.io.Serializable,java.lang.String) throws java.lang.Exception
+2015-09-10 17:14:23.475  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/{id}/{property}/{propertyId}],methods=[DELETE]}&quot; onto public org.springframework.http.ResponseEntity&lt;org.springframework.hateoas.ResourceSupport&gt; org.springframework.data.rest.webmvc.RepositoryPropertyReferenceController.deletePropertyReferenceId(org.springframework.data.rest.webmvc.RootResourceInformation,java.io.Serializable,java.lang.String,java.lang.String) throws java.lang.Exception
+2015-09-10 17:14:23.475  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/schema],methods=[GET],produces=[application/schema+json]}&quot; onto public org.springframework.http.HttpEntity&lt;org.springframework.data.rest.webmvc.json.JsonSchema&gt; org.springframework.data.rest.webmvc.RepositorySchemaController.schema(org.springframework.data.rest.webmvc.RootResourceInformation)
+2015-09-10 17:14:23.476  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/search],methods=[HEAD]}&quot; onto public org.springframework.http.HttpEntity&lt;?&gt; org.springframework.data.rest.webmvc.RepositorySearchController.headForSearches(org.springframework.data.rest.webmvc.RootResourceInformation)
+2015-09-10 17:14:23.476  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/search/{search}],methods=[HEAD]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.lang.Object&gt; org.springframework.data.rest.webmvc.RepositorySearchController.headForSearch(org.springframework.data.rest.webmvc.RootResourceInformation,java.lang.String)
+2015-09-10 17:14:23.476  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/search],methods=[GET]}&quot; onto public org.springframework.hateoas.ResourceSupport org.springframework.data.rest.webmvc.RepositorySearchController.listSearches(org.springframework.data.rest.webmvc.RootResourceInformation)
+2015-09-10 17:14:23.476  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/search/{search}],methods=[OPTIONS]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.lang.Object&gt; org.springframework.data.rest.webmvc.RepositorySearchController.optionsForSearch(org.springframework.data.rest.webmvc.RootResourceInformation,java.lang.String)
+2015-09-10 17:14:23.476  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/search/{search}],methods=[GET]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.lang.Object&gt; org.springframework.data.rest.webmvc.RepositorySearchController.executeSearch(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.web.context.request.WebRequest,java.lang.String,org.springframework.data.rest.webmvc.support.DefaultedPageable,org.springframework.data.domain.Sort,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler)
+2015-09-10 17:14:23.476  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/search],methods=[OPTIONS]}&quot; onto public org.springframework.http.HttpEntity&lt;?&gt; org.springframework.data.rest.webmvc.RepositorySearchController.optionsForSearches(org.springframework.data.rest.webmvc.RootResourceInformation)
+2015-09-10 17:14:23.477  INFO 7180 --- [    Test worker] o.s.d.r.w.RepositoryRestHandlerMapping   : Mapped &quot;{[/{repository}/search/{search}],methods=[GET],produces=[application/x-spring-data-compact+json]}&quot; onto public org.springframework.hateoas.ResourceSupport org.springframework.data.rest.webmvc.RepositorySearchController.executeSearchCompact(org.springframework.data.rest.webmvc.RootResourceInformation,org.springframework.web.context.request.WebRequest,java.lang.String,java.lang.String,org.springframework.data.rest.webmvc.support.DefaultedPageable,org.springframework.data.domain.Sort,org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler)
+2015-09-10 17:14:23.481  INFO 7180 --- [    Test worker] o.s.d.r.w.BaseUriAwareHandlerMapping     : Mapped &quot;{[/alps/{repository}],methods=[GET]}&quot; onto org.springframework.http.HttpEntity&lt;org.springframework.data.rest.webmvc.RootResourceInformation&gt; org.springframework.data.rest.webmvc.alps.AlpsController.descriptor(org.springframework.data.rest.webmvc.RootResourceInformation)
+2015-09-10 17:14:23.481  INFO 7180 --- [    Test worker] o.s.d.r.w.BaseUriAwareHandlerMapping     : Mapped &quot;{[/alps],methods=[GET]}&quot; onto org.springframework.http.HttpEntity&lt;org.springframework.hateoas.alps.Alps&gt; org.springframework.data.rest.webmvc.alps.AlpsController.alps()
+2015-09-10 17:14:23.482  INFO 7180 --- [    Test worker] o.s.d.r.w.BaseUriAwareHandlerMapping     : Mapped &quot;{[/alps || /alps/{repository}],methods=[OPTIONS]}&quot; onto org.springframework.http.HttpEntity&lt;?&gt; org.springframework.data.rest.webmvc.alps.AlpsController.alpsOptions()
+2015-09-10 17:14:23.585  INFO 7180 --- [    Test worker] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483648
+2015-09-10 17:14:23.587  INFO 7180 --- [    Test worker] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2015-09-10 17:14:23.587  INFO 7180 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2015-09-10 17:14:23.587  INFO 7180 --- [    Test worker] o.s.i.channel.PublishSubscribeChannel    : Channel 'application:0.errorChannel' has 1 subscriber(s).
+2015-09-10 17:14:23.588  INFO 7180 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2015-09-10 17:14:23.588  INFO 7180 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : Adding {} as a subscriber to the 'completedChannel' channel
+2015-09-10 17:14:23.589  INFO 7180 --- [    Test worker] o.s.integration.channel.DirectChannel    : Channel 'application:0.completedChannel' has 1 subscriber(s).
+2015-09-10 17:14:23.589  INFO 7180 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : started org.springframework.integration.config.ConsumerEndpointFactoryBean#0
+2015-09-10 17:14:23.589  INFO 7180 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : Adding {service-activator} as a subscriber to the 'completedMessageFlow.channel#0' channel
+2015-09-10 17:14:23.589  INFO 7180 --- [    Test worker] o.s.integration.channel.DirectChannel    : Channel 'application:0.completedMessageFlow.channel#0' has 1 subscriber(s).
+2015-09-10 17:14:23.589  INFO 7180 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : started org.springframework.integration.config.ConsumerEndpointFactoryBean#1
+2015-09-10 17:14:23.590  INFO 7180 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : Adding {transformer} as a subscriber to the 'rawDataPopulatin.channel#0' channel
+2015-09-10 17:14:23.591  INFO 7180 --- [    Test worker] o.s.integration.channel.DirectChannel    : Channel 'application:0.rawDataPopulatin.channel#0' has 1 subscriber(s).
+2015-09-10 17:14:23.591  INFO 7180 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : started org.springframework.integration.config.ConsumerEndpointFactoryBean#2
+2015-09-10 17:14:23.592  INFO 7180 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : Adding {transformer} as a subscriber to the 'rawDataPopulatin.channel#1' channel
+2015-09-10 17:14:23.592  INFO 7180 --- [    Test worker] o.s.integration.channel.DirectChannel    : Channel 'application:0.rawDataPopulatin.channel#1' has 1 subscriber(s).
+2015-09-10 17:14:23.593  INFO 7180 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : started org.springframework.integration.config.ConsumerEndpointFactoryBean#3
+2015-09-10 17:14:23.595  INFO 7180 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : Adding {service-activator} as a subscriber to the 'rawDataPopulatin.channel#2' channel
+2015-09-10 17:14:23.597  INFO 7180 --- [    Test worker] o.s.integration.channel.DirectChannel    : Channel 'application:0.rawDataPopulatin.channel#2' has 1 subscriber(s).
+2015-09-10 17:14:23.597  INFO 7180 --- [    Test worker] o.s.i.endpoint.EventDrivenConsumer       : started org.springframework.integration.config.ConsumerEndpointFactoryBean#4
+2015-09-10 17:14:23.598  INFO 7180 --- [    Test worker] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 1073741823
+2015-09-10 17:14:23.602  INFO 7180 --- [    Test worker] o.s.i.e.SourcePollingChannelAdapter      : started org.springframework.integration.config.SourcePollingChannelAdapterFactoryBean#0
+2015-09-10 17:14:23.657  INFO 7180 --- [    Test worker] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 3826 (http)
+2015-09-10 17:14:23.660  INFO 7180 --- [    Test worker] com.analytique.hello.HelloControllerIT   : Started HelloControllerIT in 7.194 seconds (JVM running for 8.178)
+2015-09-10 17:14:23.691  INFO 7180 --- [ask-scheduler-1] o.s.i.file.FileReadingMessageSource      : Created message: [GenericMessage [payload=c:\incomingDirectory\te.txt, headers={id=44a1533e-1981-d434-b4d5-dc9dbbbd1293, timestamp=1441923263691}]]
+2015-09-10 17:14:23.955  INFO 7180 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2015-09-10 17:14:23.955  INFO 7180 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2015-09-10 17:14:24.002  INFO 7180 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 47 ms
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>Generated by 
+<a href="http://www.gradle.org">Gradle 2.1</a> at Sep 10, 2015 5:14:25 PM</p>
+</div>
+</div>
+</body>

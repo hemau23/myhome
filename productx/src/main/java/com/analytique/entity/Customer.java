@@ -1,7 +1,7 @@
 package com.analytique.entity;
 
 
-import com.analytique.file.DelimitedField;
+import com.analytique.file.annotation.DelimitedField;
 import org.springframework.data.annotation.Id;
 
 

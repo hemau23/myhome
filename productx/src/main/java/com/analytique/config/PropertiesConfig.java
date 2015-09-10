@@ -7,7 +7,9 @@ import org.springframework.stereotype.Component;
 @Configuration
 public class PropertiesConfig {
 
-    @Value("${str.sftp.remote.directory:d:/incomingDirectory}")
+    public static final String COMPLETED_MGS_CHANNEL = "completedChannel";
+
+    @Value("${str.sftp.remote.directory:c:/incomingDirectory}")
     private String incomingDirectory;
 
     public String getIncomingDirectory() {
