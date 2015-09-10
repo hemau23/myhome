@@ -1,6 +1,7 @@
 package com.analytique.entity;
 
 
+import com.analytique.file.DelimitedField;
 import org.springframework.data.annotation.Id;
 
 
@@ -9,7 +10,11 @@ public class Customer {
     @Id
     private String id;
 
+    @DelimitedField(name="firstName")
     private String firstName;
+
+
+    @DelimitedField(name="lastName")
     private String lastName;
 
     public Customer() {}

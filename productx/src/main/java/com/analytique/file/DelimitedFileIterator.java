@@ -37,6 +37,7 @@ public class DelimitedFileIterator<T> implements Iterator<T>, AutoCloseable {
     }
 
     public DelimitedFileIterator(File file, DelimitedFileType delimitedFileType, Class<T> convertToClass) {
+
         this.convertToClass = convertToClass;
         this.delimitedFields = ReflectionUtil.getFieldsWithAnnotations(convertToClass, DelimitedFields.class, DelimitedField.class);
 
