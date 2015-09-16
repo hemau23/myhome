@@ -14,6 +14,12 @@ public class MovieBookingData {
     @Id
     private String movieBookingId;
 
+    @DelimitedField(name="movieInformationId")
+    Long movieInformationId;
+
+    @DelimitedField(name="theaterId")
+    Integer theaterId;
+
     @DelimitedField(name="dataCollectionDate")
     Date dataCollectionDate;
 
@@ -26,32 +32,20 @@ public class MovieBookingData {
     @DelimitedField(name="showTime")
     String showTime;
 
-    @DelimitedField(name="movieInformationId")
-    Long movieInformationId;
-
-    @DelimitedField(name="externalTheaterCode")
-    String externalTheaterCode;
-
     @DelimitedField(name="averageRating")
     String averageRating;
 
     @DelimitedField(name="vote")
     Integer vote;
 
-    @DelimitedField(name="seatClassName")
-    String seatClassName;
-
-    @DelimitedField(name="seatClassCode")
-    String seatClassCode;
+    @DelimitedField(name="seatClassId")
+    Integer seatClassId;
 
     @DelimitedField(name="price")
     Integer price;
 
-    @DelimitedField(name="seatClassRowCode")
-    String seatClassRowCode;
-
-    @DelimitedField(name="number")
-    String number;
+    @DelimitedField(name="seatRowCode")
+    String seatRowCode;
 
     @DelimitedField(name="seat")
     String seat;
@@ -104,12 +98,12 @@ public class MovieBookingData {
         this.movieInformationId = movieInformationId;
     }
 
-    public String getExternalTheaterCode() {
-        return externalTheaterCode;
+    public Integer getTheaterId() {
+        return theaterId;
     }
 
-    public void setExternalTheaterCode(String externalTheaterCode) {
-        this.externalTheaterCode = externalTheaterCode;
+    public void setTheaterId(Integer theaterId) {
+        this.theaterId = theaterId;
     }
 
     public String getAverageRating() {
@@ -128,22 +122,6 @@ public class MovieBookingData {
         this.vote = vote;
     }
 
-    public String getSeatClassName() {
-        return seatClassName;
-    }
-
-    public void setSeatClassName(String seatClassName) {
-        this.seatClassName = seatClassName;
-    }
-
-    public String getSeatClassCode() {
-        return seatClassCode;
-    }
-
-    public void setSeatClassCode(String seatClassCode) {
-        this.seatClassCode = seatClassCode;
-    }
-
     public Integer getPrice() {
         return price;
     }
@@ -152,20 +130,20 @@ public class MovieBookingData {
         this.price = price;
     }
 
-    public String getSeatClassRowCode() {
-        return seatClassRowCode;
+    public Integer getSeatClassId() {
+        return seatClassId;
     }
 
-    public void setSeatClassRowCode(String seatClassRowCode) {
-        this.seatClassRowCode = seatClassRowCode;
+    public void setSeatClassId(Integer seatClassId) {
+        this.seatClassId = seatClassId;
     }
 
-    public String getNumber() {
-        return number;
+    public String getSeatRowCode() {
+        return seatRowCode;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setSeatRowCode(String seatRowCode) {
+        this.seatRowCode = seatRowCode;
     }
 
     public String getSeat() {
