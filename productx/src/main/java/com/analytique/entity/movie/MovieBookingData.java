@@ -3,8 +3,8 @@ package com.analytique.entity.movie;
 import com.analytique.file.annotation.DelimitedField;
 import org.springframework.data.annotation.Id;
 
-import java.sql.Date;
-import java.sql.Timestamp;
+import java.util.Date;
+
 
 /**
  * Created by hemant on 9/10/2015.
@@ -12,49 +12,31 @@ import java.sql.Timestamp;
 public class MovieBookingData {
 
     @Id
-    private String movieId;
+    private String movieBookingId;
 
     @DelimitedField(name="dataCollectionDate")
     Date dataCollectionDate;
 
     @DelimitedField(name="dataCollectionTime")
-    Timestamp dataCollectionTime;
+    String dataCollectionTime;
 
     @DelimitedField(name="showDate")
     Date showDate;
 
     @DelimitedField(name="showTime")
-    Timestamp showTime;
+    String showTime;
 
-    @DelimitedField(name="movieName")
-    String movieName;
+    @DelimitedField(name="movieInformationId")
+    Long movieInformationId;
 
-    @DelimitedField(name="theaterCode")
-    String theaterCode;
-
-    @DelimitedField(name="theaterName")
-    String theaterName;
+    @DelimitedField(name="externalTheaterCode")
+    String externalTheaterCode;
 
     @DelimitedField(name="averageRating")
     String averageRating;
 
-    @DelimitedField(name="duration")
-    Integer duration;
-
     @DelimitedField(name="vote")
     Integer vote;
-
-    @DelimitedField(name="certificate")
-    String certificate;
-
-    @DelimitedField(name="type")
-    String type;
-
-    @DelimitedField(name="directorName")
-    String directorName;
-
-    @DelimitedField(name="cast")
-    String cast;
 
     @DelimitedField(name="seatClassName")
     String seatClassName;
@@ -74,12 +56,12 @@ public class MovieBookingData {
     @DelimitedField(name="seat")
     String seat;
 
-    public String getMovieId() {
-        return movieId;
+    public String getMovieBookingId() {
+        return movieBookingId;
     }
 
-    public void setMovieId(String movieId) {
-        this.movieId = movieId;
+    public void setMovieBookingId(String movieBookingId) {
+        this.movieBookingId = movieBookingId;
     }
 
     public Date getDataCollectionDate() {
@@ -90,11 +72,11 @@ public class MovieBookingData {
         this.dataCollectionDate = dataCollectionDate;
     }
 
-    public Timestamp getDataCollectionTime() {
+    public String getDataCollectionTime() {
         return dataCollectionTime;
     }
 
-    public void setDataCollectionTime(Timestamp dataCollectionTime) {
+    public void setDataCollectionTime(String dataCollectionTime) {
         this.dataCollectionTime = dataCollectionTime;
     }
 
@@ -106,36 +88,28 @@ public class MovieBookingData {
         this.showDate = showDate;
     }
 
-    public Timestamp getShowTime() {
+    public String getShowTime() {
         return showTime;
     }
 
-    public void setShowTime(Timestamp showTime) {
+    public void setShowTime(String showTime) {
         this.showTime = showTime;
     }
 
-    public String getMovieName() {
-        return movieName;
+    public Long getMovieInformationId() {
+        return movieInformationId;
     }
 
-    public void setMovieName(String movieName) {
-        this.movieName = movieName;
+    public void setMovieInformationId(Long movieInformationId) {
+        this.movieInformationId = movieInformationId;
     }
 
-    public String getTheaterCode() {
-        return theaterCode;
+    public String getExternalTheaterCode() {
+        return externalTheaterCode;
     }
 
-    public void setTheaterCode(String theaterCode) {
-        this.theaterCode = theaterCode;
-    }
-
-    public String getTheaterName() {
-        return theaterName;
-    }
-
-    public void setTheaterName(String theaterName) {
-        this.theaterName = theaterName;
+    public void setExternalTheaterCode(String externalTheaterCode) {
+        this.externalTheaterCode = externalTheaterCode;
     }
 
     public String getAverageRating() {
@@ -146,52 +120,12 @@ public class MovieBookingData {
         this.averageRating = averageRating;
     }
 
-    public Integer getDuration() {
-        return duration;
-    }
-
-    public void setDuration(Integer duration) {
-        this.duration = duration;
-    }
-
     public Integer getVote() {
         return vote;
     }
 
     public void setVote(Integer vote) {
         this.vote = vote;
-    }
-
-    public String getCertificate() {
-        return certificate;
-    }
-
-    public void setCertificate(String certificate) {
-        this.certificate = certificate;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getDirectorName() {
-        return directorName;
-    }
-
-    public void setDirectorName(String directorName) {
-        this.directorName = directorName;
-    }
-
-    public String getCast() {
-        return cast;
-    }
-
-    public void setCast(String cast) {
-        this.cast = cast;
     }
 
     public String getSeatClassName() {

@@ -57,7 +57,7 @@ dependencies {
     compile 'commons-beanutils:commons-beanutils:1.9.2'
     compile 'org.apache.commons:commons-lang3:3.0'
 
-
+    testCompile("org.testng:testng:6.9.6")
     testCompile("junit:junit")
 }
 

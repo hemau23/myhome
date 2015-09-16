@@ -3,19 +3,18 @@ package com.analytique.entity.movie;
 import com.analytique.file.annotation.DelimitedField;
 import org.springframework.data.annotation.Id;
 
+import java.util.Date;
+
 /**
  * Created by hemant on 9/10/2015.
  */
 public class MovieInformation {
 
     @Id
-    private Long movieId;
+    Long movieInformationId;
 
     @DelimitedField(name="movieName")
     String movieName;
-
-    @DelimitedField(name="cast")
-    String cast;
 
     @DelimitedField(name="duration")
     String duration;
@@ -23,18 +22,29 @@ public class MovieInformation {
     @DelimitedField(name="certificate")
     String certificate;
 
-    @DelimitedField(name="director")
-    String director;
-
     @DelimitedField(name="type")
     String type;
 
-    public Long getMovieId() {
-        return movieId;
+    @DelimitedField(name="isHitSongs")
+    boolean isHitSongs;
+
+    @DelimitedField(name="releaseDate")
+    Date releaseDate;
+
+    public Date getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setMovieId(Long movieId) {
-        this.movieId = movieId;
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public Long getMovieInformationId() {
+        return movieInformationId;
+    }
+
+    public void setMovieInformationId(Long movieInformationId) {
+        this.movieInformationId = movieInformationId;
     }
 
     public String getMovieName() {
@@ -45,12 +55,12 @@ public class MovieInformation {
         this.movieName = movieName;
     }
 
-    public String getCast() {
-        return cast;
+    public boolean isHitSongs() {
+        return isHitSongs;
     }
 
-    public void setCast(String cast) {
-        this.cast = cast;
+    public void setIsHitSongs(boolean isHitSongs) {
+        this.isHitSongs = isHitSongs;
     }
 
     public String getDuration() {
@@ -67,14 +77,6 @@ public class MovieInformation {
 
     public void setCertificate(String certificate) {
         this.certificate = certificate;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
     }
 
     public String getType() {

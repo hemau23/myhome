@@ -12,10 +12,10 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @ComponentScan(basePackages = {"com.analytique"})
 @EnableMongoRepositories(basePackages = { "com.analytique" })
 
-public class Application {
+public class ApplicationConfig {
 
     public static void main(String[] args) {
-        ApplicationContext ctx = SpringApplication.run(Application.class, args);
+        ApplicationContext ctx = SpringApplication.run(ApplicationConfig.class, args);
         
         System.out.println("Let's inspect the beans provided by Spring Boot:");
         

@@ -5,7 +5,7 @@ import static org.junit.Assert.assertThat;
 
 import java.net.URL;
 
-import com.analytique.config.Application;
+import com.analytique.config.ApplicationConfig;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,7 +19,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
+@SpringApplicationConfiguration(classes = ApplicationConfig.class)
 @WebAppConfiguration
 @IntegrationTest({"server.port=0"})
 public class HelloControllerIT {
