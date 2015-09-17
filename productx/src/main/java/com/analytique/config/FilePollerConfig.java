@@ -6,6 +6,7 @@ import com.analytique.entity.bookingdata.BookingRawData;
 import com.analytique.file.DelimitedFileIterator;
 import com.analytique.repository.CustomerRepository;
 import com.analytique.repository.bookingdata.BookingRawDataRepository;
+import com.analytique.util.FileService;
 import com.analytique.util.MapBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -32,6 +33,8 @@ public class FilePollerConfig {
     @Autowired
     BookingRawDataRepository bookingRawDataRepository;
 
+    @Autowired
+    FileService fileService;
 
     @Bean(name = PollerMetadata.DEFAULT_POLLER)
     public PollerMetadata poller() {
@@ -39,12 +42,13 @@ public class FilePollerConfig {
     }
 
     @Bean
-    public IntegrationFlow rawDataPopulatin() {
-        return IntegrationFlows.from(Files.inboundAdapter(new File(propertiesConfig.getIncomingDirectory()))
+    public IntegrationFlow rawDataPopulation() {
+        return IntegrationFlows.from(Files.inboundAdapter(propertiesConfig.getIncomingDirectory())
                         .autoCreateDirectory(true)
                         .patternFilter("*.*"),
                 p -> p.poller(poller()))
-                .<File,List<BookingRawData>>transform((s) -> new DelimitedFileIterator<BookingRawData>(s, AnalytiqueFileType.BOOKING_RAW_DATA, BookingRawData.class).all())
+                .<File>handle((p,h) -> fileService.moveFileToDirectory(p,propertiesConfig.getArchiveDirectory()))
+                .<File, List<BookingRawData>>transform((s) -> new DelimitedFileIterator<BookingRawData>(s, AnalytiqueFileType.BOOKING_RAW_DATA, BookingRawData.class).all())
                 .enrichHeaders(MapBuilder.with("Status", "Running").get())
                 .<List<BookingRawData>>handle((p, h) -> bookingRawDataRepository.save(p))
                 .channel(PropertiesConfig.COMPLETED_MGS_CHANNEL)
