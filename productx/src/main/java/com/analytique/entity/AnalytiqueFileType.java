@@ -10,7 +10,7 @@ import org.apache.commons.csv.CSVFormat;
 
 public enum AnalytiqueFileType implements DelimitedFileType {
 
-    CUSTOMER(Customer.class);
+    BOOKING_RAW_DATA(Customer.class);
 
     private static final String RECORD_SEPARATOR = "\r\n";
     private final CSVFormat csvFormat;

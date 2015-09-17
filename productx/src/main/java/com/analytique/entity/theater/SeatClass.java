@@ -7,7 +7,7 @@ public class SeatClass {
     @Id
     Integer seatClassId;
     String className;
-    String code;
+    String seatCode;
 
     public Integer getSeatClassId() {
         return seatClassId;
@@ -25,11 +25,11 @@ public class SeatClass {
         this.className = className;
     }
 
-    public String getCode() {
-        return code;
+    public String getSeatCode() {
+        return seatCode;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setSeatCode(String seatCode) {
+        this.seatCode = seatCode;
     }
 }

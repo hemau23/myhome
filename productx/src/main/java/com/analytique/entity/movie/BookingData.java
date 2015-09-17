@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Created by hemant on 9/10/2015.
  */
-public class MovieBookingData {
+public class BookingData {
 
     @Id
     private String movieBookingId;
@@ -20,17 +20,11 @@ public class MovieBookingData {
     @DelimitedField(name="theaterId")
     Integer theaterId;
 
-    @DelimitedField(name="dataCollectionDate")
+    @DelimitedField(name="collectionDate")
     Date dataCollectionDate;
 
-    @DelimitedField(name="dataCollectionTime")
-    String dataCollectionTime;
-
-    @DelimitedField(name="showDate")
+    @DelimitedField(name="showDateTime")
     Date showDate;
-
-    @DelimitedField(name="showTime")
-    String showTime;
 
     @DelimitedField(name="averageRating")
     String averageRating;
@@ -44,11 +38,14 @@ public class MovieBookingData {
     @DelimitedField(name="price")
     Integer price;
 
-    @DelimitedField(name="seatRowCode")
-    String seatRowCode;
+    @DelimitedField(name="rowName")
+    String rowName;
 
-    @DelimitedField(name="seat")
-    String seat;
+    @DelimitedField(name="capacity")
+    String capacity;
+
+    @DelimitedField(name="occupied")
+    String occupied;
 
     public String getMovieBookingId() {
         return movieBookingId;
@@ -66,28 +63,12 @@ public class MovieBookingData {
         this.dataCollectionDate = dataCollectionDate;
     }
 
-    public String getDataCollectionTime() {
-        return dataCollectionTime;
-    }
-
-    public void setDataCollectionTime(String dataCollectionTime) {
-        this.dataCollectionTime = dataCollectionTime;
-    }
-
     public Date getShowDate() {
         return showDate;
     }
 
     public void setShowDate(Date showDate) {
         this.showDate = showDate;
-    }
-
-    public String getShowTime() {
-        return showTime;
-    }
-
-    public void setShowTime(String showTime) {
-        this.showTime = showTime;
     }
 
     public Long getMovieInformationId() {
@@ -138,19 +119,27 @@ public class MovieBookingData {
         this.seatClassId = seatClassId;
     }
 
-    public String getSeatRowCode() {
-        return seatRowCode;
+    public String getRowName() {
+        return rowName;
     }
 
-    public void setSeatRowCode(String seatRowCode) {
-        this.seatRowCode = seatRowCode;
+    public void setRowName(String rowName) {
+        this.rowName = rowName;
     }
 
-    public String getSeat() {
-        return seat;
+    public String getCapacity() {
+        return capacity;
     }
 
-    public void setSeat(String seat) {
-        this.seat = seat;
+    public void setCapacity(String capacity) {
+        this.capacity = capacity;
+    }
+
+    public String getOccupied() {
+        return occupied;
+    }
+
+    public void setOccupied(String occupied) {
+        this.occupied = occupied;
     }
 }
