@@ -14,7 +14,6 @@ import static org.testng.Assert.*;
 public class BookingRawDataRepositoryTest extends IntegrationFlowTest {
 
     @Autowired
-
     BookingRawDataRepository bookingRawDataRepository;
 
     @BeforeMethod

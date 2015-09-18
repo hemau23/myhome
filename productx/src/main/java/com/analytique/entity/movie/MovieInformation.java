@@ -11,19 +11,16 @@ import java.util.Date;
 public class MovieInformation {
 
     @Id
-    Long movieInformationId;
+    String movieInformationId;
 
     @DelimitedField(name="movieName")
     String movieName;
 
     @DelimitedField(name="duration")
-    String duration;
+    Integer duration;
 
     @DelimitedField(name="certificate")
     String certificate;
-
-    @DelimitedField(name="type")
-    String type;
 
     @DelimitedField(name="isHitSongs")
     boolean isHitSongs;
@@ -39,11 +36,11 @@ public class MovieInformation {
         this.releaseDate = releaseDate;
     }
 
-    public Long getMovieInformationId() {
+    public String getMovieInformationId() {
         return movieInformationId;
     }
 
-    public void setMovieInformationId(Long movieInformationId) {
+    public void setMovieInformationId(String movieInformationId) {
         this.movieInformationId = movieInformationId;
     }
 
@@ -63,11 +60,11 @@ public class MovieInformation {
         this.isHitSongs = isHitSongs;
     }
 
-    public String getDuration() {
-        return duration;
-    }
+  public Integer getDuration() {
+      return duration;
+  }
 
-    public void setDuration(String duration) {
+    public void setDuration(Integer duration) {
         this.duration = duration;
     }
 
@@ -79,11 +76,5 @@ public class MovieInformation {
         this.certificate = certificate;
     }
 
-    public String getType() {
-        return type;
-    }
 
-    public void setType(String type) {
-        this.type = type;
-    }
 }
