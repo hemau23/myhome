@@ -34,11 +34,8 @@ public class BookingRawData {
     @DelimitedField(name="rowName")
     String rowName;
 
-    @DelimitedField(name="capacity")
-    Integer capacity;
-
-    @DelimitedField(name="occupied")
-    Integer occupied;
+    @DelimitedField(name="seatMap")
+    String seatMap;
 
     @DelimitedField(name="className")
     String className;
@@ -121,20 +118,12 @@ public class BookingRawData {
         this.rowName = rowName;
     }
 
-    public Integer getCapacity() {
-        return capacity;
+    public String getSeatMap() {
+        return seatMap;
     }
 
-    public void setCapacity(Integer capacity) {
-        this.capacity = capacity;
-    }
-
-    public Integer getOccupied() {
-        return occupied;
-    }
-
-    public void setOccupied(Integer occupied) {
-        this.occupied = occupied;
+    public void setSeatMap(String seatMap) {
+        this.seatMap = seatMap;
     }
 
     public String getClassName() {

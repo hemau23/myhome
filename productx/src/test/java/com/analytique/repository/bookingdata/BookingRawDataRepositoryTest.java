@@ -41,8 +41,7 @@ public class BookingRawDataRepositoryTest extends IntegrationFlowTest {
         bookingRawData.setClassName("PLATINUM");
         bookingRawData.setSeatCode("PLNM");
         bookingRawData.setRowName("A");
-        bookingRawData.setCapacity(20);
-        bookingRawData.setOccupied(10);
+        bookingRawData.setSeatMap("|1:J:A303:A304:A305:A306:A307:A308:A309:A310:A211:A212:A213:A214:A000:A000:A000|");
         bookingRawDataRepository.save(bookingRawData);
         List<BookingRawData> all = bookingRawDataRepository.findAll();
         assertEquals(all.size(),1);

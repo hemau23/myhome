@@ -57,6 +57,10 @@ dependencies {
     compile 'commons-beanutils:commons-beanutils:1.9.2'
     compile 'org.apache.commons:commons-lang3:3.0'
 
+    // R dependancy
+    compile 'org.nuiton.thirdparty:JRI:0.9-6'
+
+    //Test dependancy
     testCompile("org.testng:testng:6.9.6")
     testCompile("junit:junit")
 }
