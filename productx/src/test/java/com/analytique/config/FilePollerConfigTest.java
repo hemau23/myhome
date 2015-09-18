@@ -29,7 +29,6 @@ public class FilePollerConfigTest extends IntegrationFlowTest {
     FilePollerConfig filePollerConfig;
 
     private File inputFile;
-    private File incomingDirectory;
     private  File archiveDirectory;
 
     @BeforeMethod
@@ -56,5 +55,6 @@ public class FilePollerConfigTest extends IntegrationFlowTest {
     void testRawDataPopulation() throws IOException {
         FileUtils.copyFileToDirectory(inputFile,propertiesConfig.getIncomingDirectory());
         waitForFile(archiveDirectory);
+        assertEquals(archiveDirectory.exists(),true);
     }
 }

@@ -1,2 +1,2 @@
-    movieInformationId,    theaterId,    collectionDate,    showDateTime,    averageRating,    vote,    price,    rowName,    capacity,    occupied,   className,   seatCode,    externalTheaterCode
-    1,1,"2015-01-22 10:12:12","2015-01-22 10:12:12","80%",123,120,"B",120,90,"PLATINUM","PLN","AMC"
+movieInformationId,theaterId,collectionDate,showDateTime,averageRating,vote,price,rowName,capacity,occupied,className,seatCode,externalTheaterCode
+1,1,2015-01-22 10:12:12,2015-01-22 10:12:12,80%,123,120,B,120,90,PLATINUM,PLN,AMC
