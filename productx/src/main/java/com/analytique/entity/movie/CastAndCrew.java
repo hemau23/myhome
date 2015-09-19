@@ -5,41 +5,40 @@ import org.springframework.data.annotation.Id;
 public class CastAndCrew {
 
     @Id
-    Long castAndCrewId;
+    String castAndCrewId;
+    String movieInformationId;
+    String personId;
+    String rolId;
 
-    Long movieInformationId;
-    Long personId;
-    Long rolId;
-
-    public Long getCastAndCrewId() {
+    public String getCastAndCrewId() {
         return castAndCrewId;
     }
 
-    public void setCastAndCrewId(Long castAndCrewId) {
+    public void setCastAndCrewId(String castAndCrewId) {
         this.castAndCrewId = castAndCrewId;
     }
 
-    public Long getMovieInformationId() {
+    public String getMovieInformationId() {
         return movieInformationId;
     }
 
-    public void setMovieInformationId(Long movieInformationId) {
+    public void setMovieInformationId(String movieInformationId) {
         this.movieInformationId = movieInformationId;
     }
 
-    public Long getPersonId() {
+    public String getPersonId() {
         return personId;
     }
 
-    public void setPersonId(Long personId) {
+    public void setPersonId(String personId) {
         this.personId = personId;
     }
 
-    public Long getRolId() {
+    public String getRolId() {
         return rolId;
     }
 
-    public void setRolId(Long rolId) {
+    public void setRolId(String rolId) {
         this.rolId = rolId;
     }
 }

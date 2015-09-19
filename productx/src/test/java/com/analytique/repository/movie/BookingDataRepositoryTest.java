@@ -21,27 +21,33 @@ public class BookingDataRepositoryTest extends IntegrationFlowTest{
 
     @BeforeMethod
     public void setUp() throws Exception {
-
+        movieBookingDataRepository.deleteAll();
     }
 
     @AfterMethod
     public void tearDown() throws Exception {
-        movieBookingDataRepository.deleteAll();
+
     }
 
     @Test
     void testSave(){
-
         BookingData movieBookingData = new BookingData();
-
         movieBookingData.setDataCollectionDate(new Date());
         movieBookingData.setPrice(120);
         movieBookingData.setShowDate(new Date());
         movieBookingData.setAverageRating("80%");
         movieBookingData.setVote(4000);
+        movieBookingData.setMovieInformationId("sdh67");
+        movieBookingData.setCapacity(120);
+        movieBookingData.setOccupied(20);
+        movieBookingData.setRowName("A");
+        movieBookingData.setSeatClassId("443tf");
+        movieBookingData.setVote(123344);
+        movieBookingData.setDataCollectionDate(new Date());
+        movieBookingData.setShowDate(new Date());
+        movieBookingData.setTheaterId("fhgvhj");
         movieBookingDataRepository.save(movieBookingData);
         List<BookingData> all = movieBookingDataRepository.findAll();
         assertEquals(all.size(),1);
-
     }
 }

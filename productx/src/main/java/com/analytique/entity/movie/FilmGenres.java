@@ -5,32 +5,32 @@ import org.springframework.data.annotation.Id;
 public class FilmGenres {
 
     @Id
-    Long filmGenresId;
+    String filmGenresId;
 
-    Long genreId;
-    Long movieId;
+    String genreId;
+    String movieId;
 
-    public Long getFilmGenresId() {
+    public String getFilmGenresId() {
         return filmGenresId;
     }
 
-    public void setFilmGenresId(Long filmGenresId) {
+    public void setFilmGenresId(String filmGenresId) {
         this.filmGenresId = filmGenresId;
     }
 
-    public long getGenreId() {
+    public String getGenreId() {
         return genreId;
     }
 
-    public void setGenreId(long genreId) {
+    public void setGenreId(String genreId) {
         this.genreId = genreId;
     }
 
-    public Long getMovieId() {
+    public String getMovieId() {
         return movieId;
     }
 
-    public void setMovieId(Long movieId) {
+    public void setMovieId(String movieId) {
         this.movieId = movieId;
     }
 }

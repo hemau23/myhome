@@ -5,15 +5,15 @@ import org.springframework.data.annotation.Id;
 public class Genres {
 
     @Id
-    Long genreId;
+    String genreId;
 
     String genreName;
 
-    public Long getGenreId() {
+    public String getGenreId() {
         return genreId;
     }
 
-    public void setGenreId(Long genreId) {
+    public void setGenreId(String genreId) {
         this.genreId = genreId;
     }
 

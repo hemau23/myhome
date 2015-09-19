@@ -104,5 +104,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.yaml:snakeyaml:1.15" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.apache.ant:ant-launcher:1.7.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.nuiton.thirdparty:JRI:0.9-6" level="project" />
   </component>
 </module>

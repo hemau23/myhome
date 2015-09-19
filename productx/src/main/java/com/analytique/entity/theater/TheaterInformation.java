@@ -5,18 +5,18 @@ import org.springframework.data.annotation.Id;
 public class TheaterInformation {
 
     @Id
-    Integer theaterId;
+    String theaterId;
     String externalTheaterCode;
     String city;
     Boolean isMultiplex;
     Integer numberOfScreen;
     String address;
 
-    public Integer getTheaterId() {
+    public String getTheaterId() {
         return theaterId;
     }
 
-    public void setTheaterId(Integer theaterId) {
+    public void setTheaterId(String theaterId) {
         this.theaterId = theaterId;
     }
 

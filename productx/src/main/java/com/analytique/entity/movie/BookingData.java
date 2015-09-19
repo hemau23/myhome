@@ -12,13 +12,13 @@ import java.util.Date;
 public class BookingData {
 
     @Id
-    private String movieBookingId;
+    String movieBookingId;
 
     @DelimitedField(name="movieInformationId")
-    Long movieInformationId;
+    String movieInformationId;
 
     @DelimitedField(name="theaterId")
-    Integer theaterId;
+    String theaterId;
 
     @DelimitedField(name="collectionDate")
     Date dataCollectionDate;
@@ -33,7 +33,7 @@ public class BookingData {
     Integer vote;
 
     @DelimitedField(name="seatClassId")
-    Integer seatClassId;
+    String seatClassId;
 
     @DelimitedField(name="price")
     Integer price;
@@ -42,10 +42,10 @@ public class BookingData {
     String rowName;
 
     @DelimitedField(name="capacity")
-    String capacity;
+    Integer capacity;
 
     @DelimitedField(name="occupied")
-    String occupied;
+    Integer occupied;
 
     public String getMovieBookingId() {
         return movieBookingId;
@@ -71,19 +71,19 @@ public class BookingData {
         this.showDate = showDate;
     }
 
-    public Long getMovieInformationId() {
+    public String getMovieInformationId() {
         return movieInformationId;
     }
 
-    public void setMovieInformationId(Long movieInformationId) {
+    public void setMovieInformationId(String movieInformationId) {
         this.movieInformationId = movieInformationId;
     }
 
-    public Integer getTheaterId() {
+    public String getTheaterId() {
         return theaterId;
     }
 
-    public void setTheaterId(Integer theaterId) {
+    public void setTheaterId(String theaterId) {
         this.theaterId = theaterId;
     }
 
@@ -111,11 +111,11 @@ public class BookingData {
         this.price = price;
     }
 
-    public Integer getSeatClassId() {
+    public String getSeatClassId() {
         return seatClassId;
     }
 
-    public void setSeatClassId(Integer seatClassId) {
+    public void setSeatClassId(String seatClassId) {
         this.seatClassId = seatClassId;
     }
 
@@ -127,19 +127,19 @@ public class BookingData {
         this.rowName = rowName;
     }
 
-    public String getCapacity() {
+    public Integer getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(String capacity) {
+    public void setCapacity(Integer capacity) {
         this.capacity = capacity;
     }
 
-    public String getOccupied() {
+    public Integer getOccupied() {
         return occupied;
     }
 
-    public void setOccupied(String occupied) {
+    public void setOccupied(Integer occupied) {
         this.occupied = occupied;
     }
 }
