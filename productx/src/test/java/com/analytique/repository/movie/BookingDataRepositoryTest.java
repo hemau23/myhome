@@ -17,11 +17,11 @@ public class BookingDataRepositoryTest extends IntegrationFlowTest{
 
 
     @Autowired
-    MovieBookingDataRepository movieBookingDataRepository;
+    BookingDataRepository bookingDataRepository;
 
     @BeforeMethod
     public void setUp() throws Exception {
-        movieBookingDataRepository.deleteAll();
+        bookingDataRepository.deleteAll();
     }
 
     @AfterMethod
@@ -46,8 +46,8 @@ public class BookingDataRepositoryTest extends IntegrationFlowTest{
         movieBookingData.setDataCollectionDate(new Date());
         movieBookingData.setShowDate(new Date());
         movieBookingData.setTheaterId("fhgvhj");
-        movieBookingDataRepository.save(movieBookingData);
-        List<BookingData> all = movieBookingDataRepository.findAll();
+        bookingDataRepository.save(movieBookingData);
+        List<BookingData> all = bookingDataRepository.findAll();
         assertEquals(all.size(),1);
     }
 }
