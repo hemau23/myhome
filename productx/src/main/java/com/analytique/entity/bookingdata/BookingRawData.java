@@ -11,7 +11,7 @@ public class BookingRawData {
     String Id;
 
     @DelimitedField(name="movieInformationId")
-    Long movieInformationId;
+    String movieInformationId;
 
     @DelimitedField(name="theaterId")
     Integer theaterId;
@@ -54,11 +54,11 @@ public class BookingRawData {
         Id = id;
     }
 
-    public Long getMovieInformationId() {
+    public String getMovieInformationId() {
         return movieInformationId;
     }
 
-    public void setMovieInformationId(Long movieInformationId) {
+    public void setMovieInformationId(String movieInformationId) {
         this.movieInformationId = movieInformationId;
     }
 

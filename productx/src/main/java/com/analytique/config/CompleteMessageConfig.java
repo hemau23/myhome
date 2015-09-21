@@ -13,8 +13,6 @@ import org.springframework.integration.dsl.IntegrationFlows;
 @Configuration
 public class CompleteMessageConfig {
 
-
-
     @Autowired
     CompletedMessageTransformer completedMessageTransformer;
 

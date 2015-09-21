@@ -5,15 +5,15 @@ import org.springframework.data.annotation.Id;
 public class SeatClass {
 
     @Id
-    Integer seatClassId;
+    String seatClassId;
     String className;
     String seatCode;
 
-    public Integer getSeatClassId() {
+    public String getSeatClassId() {
         return seatClassId;
     }
 
-    public void setSeatClassId(Integer seatClassId) {
+    public void setSeatClassId(String seatClassId) {
         this.seatClassId = seatClassId;
     }
 

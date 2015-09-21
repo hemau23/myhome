@@ -1,6 +1,7 @@
 package com.analytique.transformer.movie;
 
 import com.analytique.entity.bookingdata.BookingRawData;
+import com.analytique.entity.movie.BookingData;
 import com.analytique.repository.bookingdata.BookingRawDataRepository;
 import com.analytique.repository.movie.BookingDataRepository;
 import com.analytique.repository.movie.MovieInformationRepository;
@@ -41,7 +42,7 @@ public class BookingDataTransformerTest extends IntegrationFlowTest{
         movieInformationRepository.deleteAll();
         bookingRawDataRepository.deleteAll();
         bookingRawData= new BookingRawData();
-        bookingRawData.setMovieInformationId(1L);
+        bookingRawData.setMovieInformationId("adsadf");
         bookingRawData.setTheaterId(1);
         bookingRawData.setExternalTheaterCode("AMC");
         bookingRawData.setVote(12);
@@ -59,8 +60,7 @@ public class BookingDataTransformerTest extends IntegrationFlowTest{
     public void testTransform() throws Exception {
         List<BookingRawData> bookingRawDataList= new ArrayList<>();
         bookingRawDataList.add(bookingRawData);
-        String transform = bookingDataTransformer.transform(bookingRawDataList);
-
-
+        List<BookingData> transform = bookingDataTransformer.transform(bookingRawDataList);
+        assertEquals(transform.size(),1);
     }
 }
