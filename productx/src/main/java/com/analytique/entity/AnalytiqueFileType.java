@@ -1,5 +1,7 @@
 package com.analytique.entity;
 
+import com.analytique.entity.bookingdata.BookingRawData;
+import com.analytique.entity.movie.MovieInformation;
 import com.analytique.file.DelimitedFileType;
 import org.apache.commons.csv.CSVFormat;
 
@@ -10,7 +12,8 @@ import org.apache.commons.csv.CSVFormat;
 
 public enum AnalytiqueFileType implements DelimitedFileType {
 
-    BOOKING_RAW_DATA(Customer.class);
+    BOOKING_RAW_DATA(BookingRawData.class),
+    MOVIE_INFORMATION(MovieInformation.class);
 
     private static final String RECORD_SEPARATOR = "\r\n";
     private final CSVFormat csvFormat;

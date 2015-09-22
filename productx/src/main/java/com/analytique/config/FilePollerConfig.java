@@ -3,9 +3,11 @@ package com.analytique.config;
 import com.analytique.entity.AnalytiqueFileType;
 import com.analytique.entity.bookingdata.BookingRawData;
 import com.analytique.entity.movie.BookingData;
+import com.analytique.entity.movie.MovieInformation;
 import com.analytique.file.DelimitedFileIterator;
 import com.analytique.repository.bookingdata.BookingRawDataRepository;
 import com.analytique.repository.movie.BookingDataRepository;
+import com.analytique.repository.movie.MovieInformationRepository;
 import com.analytique.transformer.movie.BookingDataTransformer;
 import com.analytique.util.FileService;
 import com.analytique.util.MapBuilder;
@@ -41,6 +43,9 @@ public class FilePollerConfig {
     BookingDataTransformer bookingDataTransformer;
 
     @Autowired
+    MovieInformationRepository movieInformationRepository;
+
+    @Autowired
     FileService fileService;
 
     @Bean(name = PollerMetadata.DEFAULT_POLLER)
@@ -52,7 +57,7 @@ public class FilePollerConfig {
     public IntegrationFlow rawDataPopulation() {
         return IntegrationFlows.from(Files.inboundAdapter(propertiesConfig.getIncomingDirectory())
                         .autoCreateDirectory(true)
-                        .patternFilter("*.*"),
+                        .patternFilter("*.brd"),
                 p -> p.poller(poller()))
                 .<File>handle((p,h) -> fileService.moveFileToDirectory(p,propertiesConfig.getArchiveDirectory()))
                 .<File, List<BookingRawData>>transform((s) -> new DelimitedFileIterator<BookingRawData>(s, AnalytiqueFileType.BOOKING_RAW_DATA, BookingRawData.class).all())
@@ -63,5 +68,22 @@ public class FilePollerConfig {
                 .channel(PropertiesConfig.COMPLETED_MGS_CHANNEL)
                 .get();
     }
+
+    @Bean
+    public IntegrationFlow movieInformationFlow(){
+        return IntegrationFlows.from(Files.inboundAdapter(propertiesConfig.getIncomingDirectory())
+                        .autoCreateDirectory(true)
+                        .patternFilter("*.mov"),
+                p -> p.poller(poller()))
+                .<File>handle((p, h) -> fileService.moveFileToDirectory(p, propertiesConfig.getArchiveDirectory()))
+                .<File, List<MovieInformation>>transform((s) -> new DelimitedFileIterator<MovieInformation>(s, AnalytiqueFileType.MOVIE_INFORMATION, MovieInformation.class).all())
+                .<List<MovieInformation>>handle((p, h) -> movieInformationRepository.save(p))
+
+
+
+    }
+
+
+
 
 }
