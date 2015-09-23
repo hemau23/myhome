@@ -25,7 +25,6 @@ public class MovieInformationTransformer implements GenericTransformer<List<Movi
     @Override
     public List<MovieInformation> transform(List<MovieRawInformation> source) {
 
-
         List<MovieInformation> movieInformations= new ArrayList<>();
         for (MovieRawInformation movieRawInformation :source){
             MovieInformation movieInformation = movieInformationRepository.findByMovieName(movieRawInformation.getMovieName());
@@ -42,8 +41,4 @@ public class MovieInformationTransformer implements GenericTransformer<List<Movi
         }
         return movieInformations;
     }
-
-
-
-
 }

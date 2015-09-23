@@ -5,16 +5,16 @@ import org.springframework.data.annotation.Id;
 public class Person {
 
     @Id
-    Long personId;
+    String personId;
 
     String firstName;
     String lastName;
 
-    public Long getPersonId() {
+    public String getPersonId() {
         return personId;
     }
 
-    public void setPersonId(Long personId) {
+    public void setPersonId(String personId) {
         this.personId = personId;
     }
 

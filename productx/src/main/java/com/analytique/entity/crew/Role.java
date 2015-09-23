@@ -5,14 +5,14 @@ import org.springframework.data.annotation.Id;
 public class Role {
 
     @Id
-    Long rolId;
+    String rolId;
     String roleName;
 
-    public Long getRolId() {
+    public String getRolId() {
         return rolId;
     }
 
-    public void setRolId(Long rolId) {
+    public void setRolId(String rolId) {
         this.rolId = rolId;
     }
 

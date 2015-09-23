@@ -37,10 +37,10 @@ public class CastAndCrewTransformer implements GenericTransformer<List<MovieInfo
 
     private void createOrUpdateCastAndCrew(MovieInformation movieInformation) {
         String castAndCrew = movieInformation.getCrew();
-        String[] castAndRoles = castAndCrew.split("|");
+        String[] castAndRoles = castAndCrew.split("\\|");
         for (String castAndRole: castAndRoles){
             String[] value = castAndRole.split(":");
-            assert value.length < 2 : " cast and roll defiend correctly";
+           // assert value.length < 2 : " cast and roll defiend correctly";
             String[] personData =value[0].split(" ");
 
             Person person = personRepository.findByFirstNameAndLastName(personData[0], personData[1]);
