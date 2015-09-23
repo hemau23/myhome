@@ -28,6 +28,9 @@ public class MovieInformation {
     @DelimitedField(name="releaseDate")
     Date releaseDate;
 
+    @DelimitedField(name="crew")
+    String crew;
+
     public Date getReleaseDate() {
         return releaseDate;
     }
@@ -76,5 +79,11 @@ public class MovieInformation {
         this.certificate = certificate;
     }
 
+    public String getCrew() {
+        return crew;
+    }
 
+    public void setCrew(String crew) {
+        this.crew = crew;
+    }
 }

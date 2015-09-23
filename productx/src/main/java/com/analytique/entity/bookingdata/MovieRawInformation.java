@@ -5,7 +5,6 @@ import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by hemant on 9/21/2015.
@@ -31,7 +30,7 @@ public class MovieRawInformation {
     Date releaseDate;
 
     @DelimitedField(name="crew")
-    Map<String,String> crew;
+    String crew;
 
     @DelimitedField(name = "genres")
     List<String> genres;
@@ -84,11 +83,11 @@ public class MovieRawInformation {
         this.releaseDate = releaseDate;
     }
 
-    public Map<String, String> getCrew() {
+    public String getCrew() {
         return crew;
     }
 
-    public void setCrew(Map<String, String> crew) {
+    public void setCrew(String crew) {
         this.crew = crew;
     }
 

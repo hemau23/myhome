@@ -2,13 +2,17 @@ package com.analytique.config;
 
 import com.analytique.entity.AnalytiqueFileType;
 import com.analytique.entity.bookingdata.BookingRawData;
+import com.analytique.entity.bookingdata.MovieRawInformation;
 import com.analytique.entity.movie.BookingData;
 import com.analytique.entity.movie.MovieInformation;
 import com.analytique.file.DelimitedFileIterator;
 import com.analytique.repository.bookingdata.BookingRawDataRepository;
+import com.analytique.repository.bookingdata.MovieRawInformationRepository;
 import com.analytique.repository.movie.BookingDataRepository;
 import com.analytique.repository.movie.MovieInformationRepository;
 import com.analytique.transformer.movie.BookingDataTransformer;
+import com.analytique.transformer.movie.CastAndCrewTransformer;
+import com.analytique.transformer.movie.MovieInformationTransformer;
 import com.analytique.util.FileService;
 import com.analytique.util.MapBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +50,16 @@ public class FilePollerConfig {
     MovieInformationRepository movieInformationRepository;
 
     @Autowired
+    MovieRawInformationRepository movieRawInformationRepository;
+
+    @Autowired
     FileService fileService;
+
+    @Autowired
+    CastAndCrewTransformer castAndCrewTransformer;
+
+    @Autowired
+    MovieInformationTransformer movieInformationTransformer;
 
     @Bean(name = PollerMetadata.DEFAULT_POLLER)
     public PollerMetadata poller() {
@@ -76,14 +89,15 @@ public class FilePollerConfig {
                         .patternFilter("*.mov"),
                 p -> p.poller(poller()))
                 .<File>handle((p, h) -> fileService.moveFileToDirectory(p, propertiesConfig.getArchiveDirectory()))
-                .<File, List<MovieInformation>>transform((s) -> new DelimitedFileIterator<MovieInformation>(s, AnalytiqueFileType.MOVIE_INFORMATION, MovieInformation.class).all())
+                .<File, List<MovieRawInformation>>transform((s) -> new DelimitedFileIterator<MovieRawInformation>(s, AnalytiqueFileType.MOVIE_RAW_INFORMATION, MovieRawInformation.class).all())
+                .<List<MovieRawInformation>>handle((p, h) -> movieRawInformationRepository.save(p))
+                .transform(movieInformationTransformer)
                 .<List<MovieInformation>>handle((p, h) -> movieInformationRepository.save(p))
-
-
+                .transform(castAndCrewTransformer)
+                .channel(PropertiesConfig.COMPLETED_MGS_CHANNEL)
+                .get();
 
     }
-
-
 
 
 }
