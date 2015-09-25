@@ -61,6 +61,7 @@ public class CastAndCrewTransformer implements GenericTransformer<List<MovieInfo
                 role.setRoleName(value[1]);
                 role = roleRepository.save(role);
             }
+            castAndCrew.setMovieInformationId(movieInformation.getMovieInformationId());
             castAndCrew.setRolId(role.getRolId());
         }
         return castAndCrew;

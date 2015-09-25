@@ -12,7 +12,6 @@ public class MovieInformation {
 
     @Id
     String movieInformationId;
-
     String movieName;
     Integer duration;
     String certificate;
@@ -83,4 +82,6 @@ public class MovieInformation {
     public void setGenreIds(List<String> genreIds) {
         this.genreIds = genreIds;
     }
+
+
 }

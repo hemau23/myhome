@@ -11,10 +11,10 @@ public class PropertiesConfig {
 
     public static final String COMPLETED_MGS_CHANNEL = "completedChannel";
 
-    @Value("${str.sftp.remote.directory:c:/incomingDirectory}")
+    @Value("${str.sftp.remote.directory:c:/analytique/incomingDirectory}")
     String incomingDirectoryPath;
 
-    @Value("${str.sftp.remote.directory:c:/archiveDirectory}")
+    @Value("${str.sftp.remote.directory:c:/analytique/archiveDirectory}")
     String archiveDirectoryPath;
 
     public void setIncomingDirectoryPath(String incomingDirectoryPath) {

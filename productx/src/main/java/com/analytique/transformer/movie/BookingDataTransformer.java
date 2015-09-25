@@ -29,6 +29,10 @@ public class BookingDataTransformer implements GenericTransformer<List<BookingRa
     private static final Logger logger = LoggerFactory.getLogger(BookingDataTransformer.class);
     public static final String OCCUPIED = "occupied";
     public static final String CAPACITY = "capacity";
+    public static final char BOOKED = '3';
+    public static final char AVAILABLE = '2';
+    public static final char AVAILABLE_NOT = '1';
+    public static final char BLANK_SPACE = '0';
 
     @Autowired
     BookingRawDataRepository bookingRawDataRepository;
@@ -86,7 +90,7 @@ public class BookingDataTransformer implements GenericTransformer<List<BookingRa
             }
         }
         catch (Exception e) {
-            new AnalytiqueException("Transformation failure" +e);
+          logger.error("Transformation failure " +e);
         }
         return bookingDataList;
     }
@@ -99,17 +103,25 @@ public class BookingDataTransformer implements GenericTransformer<List<BookingRa
             Integer capacity=0;
             Integer occupied=0;
             for (int i=2;i<seatCodes.length;i++){
-                if (seatCodes[i].codePointAt(1)==3){
-                    occupied++;
-                    capacity++;
+                char c = seatCodes[i].charAt(1);
+                switch (seatCodes[i].charAt(1)) {
+                    case BOOKED:
+                        occupied++;
+                        capacity++;
+                        continue;
+                    case AVAILABLE:
+                        capacity++;
+                        continue;
+                    case AVAILABLE_NOT:
+                        capacity++;
+                        continue;
+                    case BLANK_SPACE:
+                        logger.debug("Seat Not available");
+                        continue;
+                    default:
+                        logger.warn("SeatCode not find.Please check your data" + seatCodes[i] );
+
                 }
-                if (seatCodes[i].codePointAt(1)==2) {
-                    capacity++;
-                }
-                if (seatCodes[i].codePointAt(1)==1){
-                    capacity++;
-                }
-                logger.warn("SeatCode not find.Please check your data");
             }
 
             occupancyAndCapacity.put(OCCUPIED,occupied);
