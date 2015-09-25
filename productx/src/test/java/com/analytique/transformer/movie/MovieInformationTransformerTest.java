@@ -29,9 +29,7 @@ public class MovieInformationTransformerTest extends IntegrationFlowTest {
         movieRawInformation.setIsHitSongs(true);
         movieRawInformation.setCrew("Salman khan:Hero|Neha Dhupia:heroin|Anu Malik:Music Director");
         movieRawInformation.setDuration(120);
-        ArrayList<String> genres = new ArrayList<>();
-        genres.add("comedy");
-        genres.add("action");
+        String genres = "comedy|action";
         movieRawInformation.setGenres(genres);
         movieRawInformations= new ArrayList<>();
         movieRawInformations.add(movieRawInformation);

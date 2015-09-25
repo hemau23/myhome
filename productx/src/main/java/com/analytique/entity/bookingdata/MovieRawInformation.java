@@ -33,7 +33,7 @@ public class MovieRawInformation {
     String crew;
 
     @DelimitedField(name = "genres")
-    List<String> genres;
+    String genres;
 
     public String getMovieRawId() {
         return movieRawId;
@@ -91,11 +91,11 @@ public class MovieRawInformation {
         this.crew = crew;
     }
 
-    public List<String> getGenres() {
+    public String getGenres() {
         return genres;
     }
 
-    public void setGenres(List<String> genres) {
+    public void setGenres(String genres) {
         this.genres = genres;
     }
 }

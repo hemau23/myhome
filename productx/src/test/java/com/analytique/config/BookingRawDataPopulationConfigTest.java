@@ -10,13 +10,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.File;
-import java.io.IOException;
 
 import static org.testng.Assert.*;
 
 @Test(groups = { "Analytique", "config" })
 @ContextConfiguration(classes = {TestApplicationConfig.class})
-public class FilePollerConfigTest extends IntegrationFlowTest {
+public class BookingRawDataPopulationConfigTest extends IntegrationFlowTest {
 
 
     @Autowired
@@ -26,15 +25,15 @@ public class FilePollerConfigTest extends IntegrationFlowTest {
     PropertiesConfig propertiesConfig;
 
     @Autowired
-    FilePollerConfig filePollerConfig;
+    BookingRawDataPopulationConfig bookingRawDataPopulationConfig;
 
     private File inputFile;
     private  File archiveDirectory;
 
     @BeforeMethod
     public void setUp() throws Exception {
-        inputFile= new File(this.getClass().getResource("/input/input_1.csv").toURI());
-        archiveDirectory= new File(propertiesConfig.getIncomingDirectoryPath()+File.separator+"input_1.csv");
+        inputFile= new File(this.getClass().getResource("/input/bookingRawData.brd").toURI());
+        archiveDirectory= new File(propertiesConfig.getIncomingDirectoryPath()+File.separator+"bookingRawData.brd");
         cleanup();
     }
 
@@ -52,7 +51,16 @@ public class FilePollerConfigTest extends IntegrationFlowTest {
     }
 
     @Test
-    void testRawDataPopulation() throws IOException {
+       void testRawDataPopulation() throws Exception {
+        FileUtils.copyFileToDirectory(inputFile,propertiesConfig.getIncomingDirectory());
+        waitForFile(archiveDirectory);
+        assertEquals(archiveDirectory.exists(), true);
+    }
+
+    @Test
+    void testMovieInformationFlow() throws Exception {
+        inputFile= new File(this.getClass().getResource("/input/movieInfo.mov").toURI());
+        archiveDirectory= new File(propertiesConfig.getIncomingDirectoryPath()+File.separator+"movieInfo.mov");
         FileUtils.copyFileToDirectory(inputFile,propertiesConfig.getIncomingDirectory());
         waitForFile(archiveDirectory);
         assertEquals(archiveDirectory.exists(),true);
