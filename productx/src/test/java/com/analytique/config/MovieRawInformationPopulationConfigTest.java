@@ -47,8 +47,8 @@ public class MovieRawInformationPopulationConfigTest extends IntegrationFlowTest
 
     @BeforeMethod
     public void setUp() throws Exception {
-        inputFile= new File(this.getClass().getResource("/input/bookingRawData.brd").toURI());
-        archiveDirectory= new File(propertiesConfig.getIncomingDirectoryPath()+File.separator+"bookingRawData.brd");
+        inputFile= new File(this.getClass().getResource("/input/movieInfo.mov").toURI());
+        archiveDirectory= new File(propertiesConfig.getIncomingDirectoryPath()+File.separator+"movieInfo.mov");
         cleanup();
     }
 
@@ -72,8 +72,6 @@ public class MovieRawInformationPopulationConfigTest extends IntegrationFlowTest
 
     @Test
     void testMovieInformationFlow() throws Exception {
-        inputFile= new File(this.getClass().getResource("/input/movieInfo.mov").toURI());
-        archiveDirectory= new File(propertiesConfig.getIncomingDirectoryPath()+File.separator+"movieInfo.mov");
         FileUtils.copyFileToDirectory(inputFile, propertiesConfig.getIncomingDirectory());
         waitForFile(archiveDirectory);
         assertEquals(archiveDirectory.exists(),true);

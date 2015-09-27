@@ -59,8 +59,6 @@ public class BookingRawDataPopulationConfigTest extends IntegrationFlowTest {
 
     @Test
     void testMovieInformationFlow() throws Exception {
-        inputFile= new File(this.getClass().getResource("/input/movieInfo.mov").toURI());
-        archiveDirectory= new File(propertiesConfig.getIncomingDirectoryPath()+File.separator+"movieInfo.mov");
         FileUtils.copyFileToDirectory(inputFile,propertiesConfig.getIncomingDirectory());
         waitForFile(archiveDirectory);
         assertEquals(archiveDirectory.exists(),true);

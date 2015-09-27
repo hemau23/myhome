@@ -3,9 +3,6 @@ package com.analytique.entity.theater;
 import com.analytique.file.annotation.DelimitedField;
 import org.springframework.data.annotation.Id;
 
-import java.util.List;
-import java.util.Map;
-
 /**
  * Created by hemant on 9/21/2015.
  */
@@ -17,20 +14,65 @@ public class TheaterRawInformation {
     @DelimitedField(name="externalTheaterCode")
     String externalTheaterCode;
 
-    @DelimitedField(name="city")
-    String city;
+    @DelimitedField(name = "theaterName")
+    String theaterName;
 
     @DelimitedField(name="isMultiplex")
-    Boolean isMultiplex;
+      Boolean isMultiplex;
 
     @DelimitedField(name="numberOfScreen")
     Integer numberOfScreen;
 
-    @DelimitedField(name="address")
+    @DelimitedField(name = "address")
     String address;
 
-    @DelimitedField(name="seatClassMap")
-    Map<String,String> seatClassMap;
+    @DelimitedField(name = "city")
+    String city;
+
+    @DelimitedField(name = "pinCode")
+    Integer pinCode;
+
+    @DelimitedField(name = "state")
+    String state;
+
+    @DelimitedField(name = "country")
+    String country;
+
+    @DelimitedField(name = "seatClassNames")
+    String seatClassNames;
+
+
+    public String getTheaterName() {
+        return theaterName;
+    }
+
+    public void setTheaterName(String theaterName) {
+        this.theaterName = theaterName;
+    }
+
+    public Integer getPinCode() {
+        return pinCode;
+    }
+
+    public void setPinCode(Integer pinCode) {
+        this.pinCode = pinCode;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 
     public String getId() {
         return Id;
@@ -80,11 +122,11 @@ public class TheaterRawInformation {
         this.address = address;
     }
 
-    public Map<String, String> getSeatClassMap() {
-        return seatClassMap;
+    public String getSeatClassNames() {
+        return seatClassNames;
     }
 
-    public void setSeatClassMap(Map<String, String> seatClassMap) {
-        this.seatClassMap = seatClassMap;
+    public void setSeatClassNames(String seatClassNames) {
+        this.seatClassNames = seatClassNames;
     }
 }
