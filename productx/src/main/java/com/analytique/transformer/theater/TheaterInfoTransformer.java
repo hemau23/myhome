@@ -41,7 +41,7 @@ public class TheaterInfoTransformer implements GenericTransformer<List<TheaterRa
                 List<String> seatClassIds = new ArrayList<String>();
                 for (String seatClassAndCode : seatClassStr) {
                     String[] splitStr = seatClassAndCode.split(":");
-                    SeatClass seatClass = seatClassRepository.findBySeatCode(splitStr[0]);
+                    SeatClass seatClass = seatClassRepository.findBySeatCode(splitStr[1]);
                     if (seatClass == null) {
                         seatClass = new SeatClass();
                         seatClass.setClassName(splitStr[0]);

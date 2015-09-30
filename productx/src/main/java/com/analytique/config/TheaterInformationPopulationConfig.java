@@ -51,7 +51,7 @@ public class TheaterInformationPopulationConfig {
     public IntegrationFlow movieInformationFlow(){
         return IntegrationFlows.from(Files.inboundAdapter(propertiesConfig.getIncomingDirectory())
                         .autoCreateDirectory(true)
-                        .patternFilter("*.mov"),
+                        .patternFilter("*.tinfo"),
                 p -> p.poller(poller()))
                 .<File>handle((p, h) -> fileService.moveFileToDirectory(p, propertiesConfig.getArchiveDirectory()))
                 .<File, List<TheaterRawInformation>>transform((s) -> new DelimitedFileIterator<TheaterRawInformation>(s, AnalytiqueFileType.THEATER_RAW_INFORMATION, TheaterRawInformation.class).all())

@@ -10,6 +10,7 @@ import com.analytique.repository.movie.MovieInformationRepository;
 import com.analytique.util.IntegrationFlowTest;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -18,6 +19,8 @@ import java.io.File;
 
 import static org.testng.Assert.*;
 
+@Test(groups = { "Analytique", "config" })
+@ContextConfiguration(classes = {TestApplicationConfig.class})
 public class MovieRawInformationPopulationConfigTest extends IntegrationFlowTest {
 
 
