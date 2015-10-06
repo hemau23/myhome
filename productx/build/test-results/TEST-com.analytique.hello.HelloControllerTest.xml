@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.analytique.hello.HelloControllerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2015-09-30T18:06:26" hostname="d79535" time="0.001">
+<testsuite name="com.analytique.hello.HelloControllerTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2015-10-06T15:16:44" hostname="d79535" time="0.002">
   <properties/>
-  <testcase name="initializationError" classname="com.analytique.hello.HelloControllerTest" time="0.001">
+  <testcase name="initializationError" classname="com.analytique.hello.HelloControllerTest" time="0.002">
     <failure message="java.lang.Exception: No runnable methods" type="java.lang.Exception">java.lang.Exception: No runnable methods
 	at org.junit.runners.BlockJUnit4ClassRunner.validateInstanceMethods(BlockJUnit4ClassRunner.java:191)
 	at org.junit.runners.BlockJUnit4ClassRunner.collectInitializationErrors(BlockJUnit4ClassRunner.java:128)

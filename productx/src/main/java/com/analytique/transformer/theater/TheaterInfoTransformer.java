@@ -5,6 +5,7 @@ import com.analytique.entity.theater.TheaterInformation;
 import com.analytique.entity.theater.TheaterRawInformation;
 import com.analytique.exception.AnalytiqueException;
 import com.analytique.repository.theater.SeatClassRepository;
+import com.analytique.repository.theater.TheaterInformationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.integration.transformer.GenericTransformer;
 import org.springframework.stereotype.Component;
@@ -21,12 +22,22 @@ public class TheaterInfoTransformer implements GenericTransformer<List<TheaterRa
 
     @Autowired
     SeatClassRepository seatClassRepository;
+
+    @Autowired
+    TheaterInformationRepository theaterInformationRepository;
+
     @Override
     public List<TheaterInformation> transform(List<TheaterRawInformation> source) {
         List<TheaterInformation> theaterInformationList= new ArrayList<>();
         try {
             for (TheaterRawInformation theaterRawInformation : source) {
-                TheaterInformation theaterInformation = new TheaterInformation();
+
+                TheaterInformation theaterInformation  = theaterInformationRepository.findByExternalTheaterCode(theaterRawInformation.getExternalTheaterCode());
+
+                if(theaterInformation == null) {
+                   theaterInformation = new TheaterInformation();
+                }
+
                 theaterInformation.setAddress(theaterRawInformation.getAddress());
                 theaterInformation.setCity(theaterRawInformation.getCity());
                 theaterInformation.setCountry(theaterRawInformation.getCountry());
@@ -55,7 +66,7 @@ public class TheaterInfoTransformer implements GenericTransformer<List<TheaterRa
             }
         }
         catch (Exception e){
-            throw  new AnalytiqueException("TheaterInformation transformation failure");
+            throw  new AnalytiqueException("TheaterInformation transformation failure" +e);
         }
         return theaterInformationList;
     }

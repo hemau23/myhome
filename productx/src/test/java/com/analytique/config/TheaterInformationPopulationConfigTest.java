@@ -20,7 +20,7 @@ import static org.testng.Assert.*;
  * Created by hemant on 9/26/2015.
  */
 
-@Test(groups = { "Analytique", "config1" })
+@Test(groups = { "Analytique1", "config1" })
 @ContextConfiguration(classes = {TestApplicationConfig.class})
 public class TheaterInformationPopulationConfigTest extends IntegrationFlowTest{
 
