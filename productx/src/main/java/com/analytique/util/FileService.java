@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,7 +16,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-@Component
+@Configuration
 public class FileService {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());

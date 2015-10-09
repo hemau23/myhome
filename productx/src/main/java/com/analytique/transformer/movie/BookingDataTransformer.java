@@ -29,9 +29,9 @@ public class BookingDataTransformer implements GenericTransformer<List<BookingRa
     private static final Logger logger = LoggerFactory.getLogger(BookingDataTransformer.class);
     public static final String OCCUPIED = "occupied";
     public static final String CAPACITY = "capacity";
-    public static final char BOOKED = '3';
-    public static final char AVAILABLE = '2';
-    public static final char AVAILABLE_NOT = '1';
+    public static final char NO_SEAT = '0';
+    public static char BOOKED = '3';
+    public static char AVAILABLE = '1';
     public static final char BLANK_SPACE = '0';
 
     @Autowired
@@ -102,25 +102,25 @@ public class BookingDataTransformer implements GenericTransformer<List<BookingRa
             String[] seatCodes =seatMap.split(":");
             Integer capacity=0;
             Integer occupied=0;
+            if (!seatCodes[0].equals("|1")) {
+                BOOKED ='2';
+                AVAILABLE ='1';
+
+            }
             for (int i=2;i<seatCodes.length;i++){
                 char c = seatCodes[i].charAt(1);
-                switch (seatCodes[i].charAt(1)) {
-                    case BOOKED:
-                        occupied++;
-                        capacity++;
-                        continue;
-                    case AVAILABLE:
-                        capacity++;
-                        continue;
-                    case AVAILABLE_NOT:
-                        capacity++;
-                        continue;
-                    case BLANK_SPACE:
-                        logger.debug("Seat Not available");
-                        continue;
-                    default:
-                        logger.warn("SeatCode not find.Please check your data" + seatCodes[i] );
-
+                if (c==BOOKED){
+                    occupied++;
+                    capacity++;
+                }
+                else if (c==AVAILABLE){
+                    capacity++;
+                }
+                else if (c== NO_SEAT){
+                    logger.debug("Seat Not available");
+                }
+                else {
+                    logger.warn("SeatCode not find.Please check your data" + seatCodes[i] );
                 }
             }
 

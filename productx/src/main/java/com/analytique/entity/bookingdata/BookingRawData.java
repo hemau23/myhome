@@ -13,9 +13,6 @@ public class BookingRawData {
     @DelimitedField(name="movieInformationId")
     String movieInformationId;
 
-    @DelimitedField(name="theaterId")
-    Integer theaterId;
-
     @DelimitedField(name="collectionDate")
     Date dataCollectionDate;
 
@@ -60,14 +57,6 @@ public class BookingRawData {
 
     public void setMovieInformationId(String movieInformationId) {
         this.movieInformationId = movieInformationId;
-    }
-
-    public Integer getTheaterId() {
-        return theaterId;
-    }
-
-    public void setTheaterId(Integer theaterId) {
-        this.theaterId = theaterId;
     }
 
     public Date getDataCollectionDate() {
