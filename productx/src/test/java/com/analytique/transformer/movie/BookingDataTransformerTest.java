@@ -43,7 +43,7 @@ public class BookingDataTransformerTest extends IntegrationFlowTest{
         bookingRawDataRepository.deleteAll();
         bookingRawData= new BookingRawData();
         bookingRawData.setMovieInformationId("adsadf");
-        bookingRawData.setTheaterId(1);
+
         bookingRawData.setExternalTheaterCode("AMC");
         bookingRawData.setVote(12);
         bookingRawData.setAverageRating("20%");

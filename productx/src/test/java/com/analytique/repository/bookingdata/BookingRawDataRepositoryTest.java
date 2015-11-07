@@ -30,7 +30,7 @@ public class BookingRawDataRepositoryTest extends IntegrationFlowTest {
     void testSaveAll(){
         BookingRawData bookingRawData= new BookingRawData();
         bookingRawData.setMovieInformationId("adfssfd34");
-        bookingRawData.setTheaterId(1);
+
         bookingRawData.setExternalTheaterCode("AMC");
         bookingRawData.setVote(12);
         bookingRawData.setAverageRating("20%");

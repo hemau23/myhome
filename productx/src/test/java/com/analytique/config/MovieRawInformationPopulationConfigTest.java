@@ -51,7 +51,7 @@ public class MovieRawInformationPopulationConfigTest extends IntegrationFlowTest
     @BeforeMethod
     public void setUp() throws Exception {
         inputFile= new File(this.getClass().getResource("/input/movieInfo.mov").toURI());
-        archiveDirectory= new File(propertiesConfig.getIncomingDirectoryPath()+File.separator+"movieInfo.mov");
+        archiveDirectory= new File(propertiesConfig.getIncomingDirectoryPath()+File.separator+"MovieInfo.mov");
         cleanup();
     }
 
