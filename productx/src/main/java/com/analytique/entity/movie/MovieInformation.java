@@ -19,6 +19,15 @@ public class MovieInformation {
     Date releaseDate;
     String crew;
     List<String> genreIds;
+    String movieExternalCode;
+
+    public String getMovieExternalCode() {
+        return movieExternalCode;
+    }
+
+    public void setMovieExternalCode(String movieExternalCode) {
+        this.movieExternalCode = movieExternalCode;
+    }
 
     public Date getReleaseDate() {
         return releaseDate;

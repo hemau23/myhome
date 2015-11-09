@@ -12,4 +12,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface MovieInformationRepository extends MongoRepository<MovieInformation,String> {
 
     MovieInformation findByMovieName(@Param("movieName") String movieName);
+    MovieInformation findByMovieExternalCode(@Param("movieExternalCode") String movieExternalCode);
+
 }
