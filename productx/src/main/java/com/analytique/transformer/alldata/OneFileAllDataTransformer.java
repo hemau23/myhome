@@ -32,7 +32,7 @@ public class OneFileAllDataTransformer implements GenericTransformer<List<OneFil
     public static final String CAPACITY = "capacity";
     public static final char NO_SEAT = '0';
     public static char BOOKED = '3';
-    public static char AVAILABLE = '1';
+    public static char AVAILABLE = '2';
     public static final String CDT_DATE_TIME_FORMAT = "E MMM dd HH:mm:ss Z yyyy";
     public static final String AM_PM_DATE_TIME_FORMAT = "yyyyMMdd hh:mm a";
     public static final String INDIA_TIMEZONE = "Asia/Kolkata";
@@ -186,7 +186,6 @@ public class OneFileAllDataTransformer implements GenericTransformer<List<OneFil
                     logger.warn("SeatCode not find.Please check your data" + seatCodes[i] );
                 }
             }
-
             occupancyAndCapacity.put(OCCUPIED,occupied);
             occupancyAndCapacity.put(CAPACITY,capacity);
             return occupancyAndCapacity;
