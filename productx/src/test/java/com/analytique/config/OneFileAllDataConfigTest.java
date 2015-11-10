@@ -17,7 +17,7 @@ import static org.testng.Assert.*;
  * Created by hemau23 on 11/7/2015.
  */
 
-@Test(groups = { "Analytique1", "config1" })
+@Test(groups = { "Analytique2", "config2" })
 @ContextConfiguration(classes = {TestApplicationConfig.class})
 public class OneFileAllDataConfigTest extends IntegrationFlowTest {
 

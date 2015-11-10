@@ -24,9 +24,6 @@ public class BookingRawDataPopulationConfigTest extends IntegrationFlowTest {
     @Autowired
     PropertiesConfig propertiesConfig;
 
-    @Autowired
-    BookingRawDataPopulationConfig bookingRawDataPopulationConfig;
-
     private File inputFile;
     private  File archiveDirectory;
 

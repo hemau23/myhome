@@ -1,17 +1,20 @@
 package com.analytique.config;
 
 import com.analytique.entity.AnalytiqueFileType;
+import com.analytique.entity.alldata.OneFileAllData;
 import com.analytique.entity.bookingdata.BookingRawData;
 import com.analytique.entity.bookingdata.MovieRawInformation;
 import com.analytique.entity.movie.BookingData;
 import com.analytique.entity.movie.CastAndCrew;
 import com.analytique.entity.movie.MovieInformation;
 import com.analytique.file.DelimitedFileIterator;
+import com.analytique.repository.alldata.OneFileAllDataRepository;
 import com.analytique.repository.bookingdata.BookingRawDataRepository;
 import com.analytique.repository.bookingdata.MovieRawInformationRepository;
 import com.analytique.repository.movie.BookingDataRepository;
 import com.analytique.repository.movie.CastAndCrewRepository;
 import com.analytique.repository.movie.MovieInformationRepository;
+import com.analytique.transformer.alldata.OneFileAllDataTransformer;
 import com.analytique.transformer.movie.BookingDataTransformer;
 import com.analytique.transformer.movie.CastAndCrewTransformer;
 import com.analytique.transformer.movie.MovieInformationTransformer;
@@ -66,6 +69,8 @@ public class BookingRawDataPopulationConfig {
     @Autowired
     CastAndCrewRepository castAndCrewRepository;
 
+
+
     @Bean(name = PollerMetadata.DEFAULT_POLLER)
     public PollerMetadata poller() {
         return Pollers.fixedRate(500).get();
@@ -86,8 +91,5 @@ public class BookingRawDataPopulationConfig {
                 .channel(PropertiesConfig.COMPLETED_MGS_CHANNEL)
                 .get();
     }
-
-
-
 
 }

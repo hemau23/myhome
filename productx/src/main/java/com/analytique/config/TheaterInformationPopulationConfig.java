@@ -1,17 +1,22 @@
 package com.analytique.config;
 
 import com.analytique.entity.AnalytiqueFileType;
+import com.analytique.entity.alldata.OneFileAllData;
 import com.analytique.entity.bookingdata.MovieRawInformation;
+import com.analytique.entity.movie.BookingData;
 import com.analytique.entity.movie.CastAndCrew;
 import com.analytique.entity.movie.MovieInformation;
 import com.analytique.entity.theater.TheaterInformation;
 import com.analytique.entity.theater.TheaterRawInformation;
 import com.analytique.file.DelimitedFileIterator;
+import com.analytique.repository.alldata.OneFileAllDataRepository;
 import com.analytique.repository.bookingdata.MovieRawInformationRepository;
+import com.analytique.repository.movie.BookingDataRepository;
 import com.analytique.repository.movie.CastAndCrewRepository;
 import com.analytique.repository.movie.MovieInformationRepository;
 import com.analytique.repository.theater.TheaterInformationRepository;
 import com.analytique.repository.theater.TheaterRawInformationRepository;
+import com.analytique.transformer.alldata.OneFileAllDataTransformer;
 import com.analytique.transformer.movie.CastAndCrewTransformer;
 import com.analytique.transformer.movie.MovieInformationTransformer;
 import com.analytique.transformer.theater.TheaterInfoTransformer;
@@ -56,6 +61,9 @@ public class TheaterInformationPopulationConfig {
     @Autowired
     MovieRawInformationRepository movieRawInformationRepository;
 
+    @Autowired
+    BookingDataRepository bookingDataRepository;
+
 
     @Autowired
     MovieInformationTransformer movieInformationTransformer;
@@ -63,6 +71,12 @@ public class TheaterInformationPopulationConfig {
     @Autowired
     CastAndCrewTransformer castAndCrewTransformer;
 
+    @Autowired
+    OneFileAllDataRepository oneFileAllDataRepository;
+
+
+    @Autowired
+    OneFileAllDataTransformer oneFileAllDataTransformer;
 
     @Autowired
     CastAndCrewRepository castAndCrewRepository;
@@ -104,4 +118,20 @@ public class TheaterInformationPopulationConfig {
                 .channel(PropertiesConfig.COMPLETED_MGS_CHANNEL)
                 .get();
     }
+
+    @Bean
+    public IntegrationFlow movieInformationFlow2(){
+        return IntegrationFlows.from(Files.inboundAdapter(propertiesConfig.getIncomingDirectory())
+                        .autoCreateDirectory(true)
+                        .patternFilter("*.txt"),
+                p -> p.poller(poller()))
+                .<File>handle((p, h) -> fileService.moveFileToDirectory(p, propertiesConfig.getArchiveDirectory()))
+                .<File, List<OneFileAllData>>transform((s) -> new DelimitedFileIterator<OneFileAllData>(s, AnalytiqueFileType.THEATER_RAW_INFORMATION, OneFileAllData.class).all())
+                .<List<OneFileAllData>>handle((p, h) -> oneFileAllDataRepository.save(p))
+                .transform(oneFileAllDataTransformer)
+                .<List<BookingData>>handle((p,h) -> bookingDataRepository.save(p))
+                .channel(PropertiesConfig.COMPLETED_MGS_CHANNEL)
+                .get();
+    }
+
 }
