@@ -73,6 +73,11 @@ public class OneFileAllDataTransformer implements GenericTransformer<List<OneFil
                 String india = DateTimeUtil.buildDateWithTimeZone(date, INDIA_TIMEZONE, AM_PM_DATE_TIME_FORMAT);
                 showDateTime = DateTimeUtil.parseDate(india, "yyyyMMdd hh:mm a");
             }
+            else if (showDateTimeStr.contains("CST")) {
+                Date date = DateTimeUtil.parseDate(showDateTimeStr, CDT_DATE_TIME_FORMAT);
+                String india = DateTimeUtil.buildDateWithTimeZone(date, INDIA_TIMEZONE, AM_PM_DATE_TIME_FORMAT);
+                showDateTime = DateTimeUtil.parseDate(india, "yyyyMMdd hh:mm a");
+            }
             if (showDateTime == null) throw new AnalytiqueException("Show date time parsing error" + showDateTimeStr);
             String[] split = oneFileAllData.getSeatMap().split("\\|\\|");
             Map<String,String> seatClassMap=getSeatClass(split[0]);
