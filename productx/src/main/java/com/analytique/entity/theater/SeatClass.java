@@ -10,7 +10,7 @@ public class SeatClass {
     String seatCode;
 
     public String getSeatClassId() {
-        return seatClassId;
+        return this.seatClassId;
     }
 
     public void setSeatClassId(String seatClassId) {

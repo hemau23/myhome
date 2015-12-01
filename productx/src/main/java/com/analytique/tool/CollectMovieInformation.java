@@ -110,7 +110,7 @@ public class CollectMovieInformation {
         }
     }
 
-  /*  public static void main(String[] args) {
+   /* public static void main(String[] args) {
         new CollectMovieInformation().writeToFile();
     }*/
 }

@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by hemant on 9/19/2015.
  */
-@RepositoryRestResource
+@RepositoryRestResource(collectionResourceRel = "seatClass", path = "seatClass")
 public interface SeatClassRepository extends MongoRepository<SeatClass,String> {
      SeatClass findBySeatCode(@Param("seatCode") String seatCode);
      List<SeatClass> findBySeatCodeAndClassName(@Param("seatCode") String seatCode,@Param("className") String className);

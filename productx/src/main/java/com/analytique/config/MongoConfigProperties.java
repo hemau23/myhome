@@ -12,7 +12,7 @@ public class MongoConfigProperties {
     @Value("${spring.data.mongodb.port:27017}")
     private int port;
 
-    @Value("${ngi.database.name:ngi}")
+    @Value("${analytique.database.name:analytique}")
     private String dataBaseName;
 
     public String getHost() {

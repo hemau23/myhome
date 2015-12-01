@@ -23,8 +23,11 @@ public class BookingData {
     @DelimitedField(name="collectionDate")
     Date dataCollectionDate;
 
-    @DelimitedField(name="showDateTime")
-    Date showDate;
+    @DelimitedField(name="showDate")
+    String showDate;
+
+    @DelimitedField(name="showTime")
+    String showTime;
 
     @DelimitedField(name="averageRating")
     String averageRating;
@@ -47,6 +50,14 @@ public class BookingData {
     @DelimitedField(name="occupied")
     Integer occupied;
 
+    public String getShowTime() {
+        return showTime;
+    }
+
+    public void setShowTime(String showTime) {
+        this.showTime = showTime;
+    }
+
     public String getMovieBookingId() {
         return movieBookingId;
     }
@@ -63,11 +74,11 @@ public class BookingData {
         this.dataCollectionDate = dataCollectionDate;
     }
 
-    public Date getShowDate() {
+    public String getShowDate() {
         return showDate;
     }
 
-    public void setShowDate(Date showDate) {
+    public void setShowDate(String showDate) {
         this.showDate = showDate;
     }
 

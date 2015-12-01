@@ -35,7 +35,7 @@ public class BookingRawDataRepositoryTest extends IntegrationFlowTest {
         bookingRawData.setVote(12);
         bookingRawData.setAverageRating("20%");
         bookingRawData.setDataCollectionDate(new Date());
-        bookingRawData.setShowDate(new Date());
+        bookingRawData.setShowDate("2015-01-01");
         bookingRawData.setPrice(120);
         bookingRawData.setClassName("PLATINUM");
         bookingRawData.setSeatCode("PLNM");

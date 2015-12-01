@@ -66,7 +66,7 @@ public class TheaterInformation {
     }
 
     public String getTheaterId() {
-        return theaterId;
+        return this.theaterId;
     }
 
     public void setTheaterId(String theaterId) {

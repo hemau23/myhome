@@ -17,23 +17,88 @@ public class MovieRawInformation {
     @DelimitedField(name="movieName")
     String movieName;
 
-    @DelimitedField(name="duration")
+    @DelimitedField(name="Length")
     Integer duration;
 
-    @DelimitedField(name="certificate")
+    @DelimitedField(name="EventCensor")
     String certificate;
 
     @DelimitedField(name="isHitSongs")
     boolean isHitSongs;
 
-    @DelimitedField(name="releaseDate")
+    @DelimitedField(name="EventReleaseDate")
     Date releaseDate;
 
-    @DelimitedField(name="crew")
-    String crew;
+    @DelimitedField(name="Director")
+    String director;
 
-    @DelimitedField(name = "genres")
+
+    @DelimitedField(name="Actors")
+    String actor;
+
+    @DelimitedField(name = "Genre")
     String genres;
+
+    @DelimitedField(name = "EventCode")
+    String movieExternalCode;
+
+    @DelimitedField(name="Ratings")
+    String rating;
+
+    @DelimitedField(name="Language")
+    String language;
+
+    @DelimitedField(name="TrailerURL")
+    String trailerUrl;
+
+
+    public String getDirector() {
+        return director;
+    }
+
+    public void setDirector(String director) {
+        this.director = director;
+    }
+
+    public String getActor() {
+        return actor;
+    }
+
+    public void setActor(String actor) {
+        this.actor = actor;
+    }
+
+    public String getMovieExternalCode() {
+        return movieExternalCode;
+    }
+
+    public void setMovieExternalCode(String movieExternalCode) {
+        this.movieExternalCode = movieExternalCode;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public String getTrailerUrl() {
+        return trailerUrl;
+    }
+
+    public void setTrailerUrl(String trailerUrl) {
+        this.trailerUrl = trailerUrl;
+    }
 
     public String getMovieRawId() {
         return movieRawId;
@@ -81,14 +146,6 @@ public class MovieRawInformation {
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
-    }
-
-    public String getCrew() {
-        return crew;
-    }
-
-    public void setCrew(String crew) {
-        this.crew = crew;
     }
 
     public String getGenres() {

@@ -34,7 +34,7 @@ public class BookingDataRepositoryTest extends IntegrationFlowTest{
         BookingData movieBookingData = new BookingData();
         movieBookingData.setDataCollectionDate(new Date());
         movieBookingData.setPrice(120);
-        movieBookingData.setShowDate(new Date());
+        movieBookingData.setShowDate("2015-01-01");
         movieBookingData.setAverageRating("80%");
         movieBookingData.setVote(4000);
         movieBookingData.setMovieInformationId("sdh67");
@@ -44,7 +44,7 @@ public class BookingDataRepositoryTest extends IntegrationFlowTest{
         movieBookingData.setSeatClassId("443tf");
         movieBookingData.setVote(123344);
         movieBookingData.setDataCollectionDate(new Date());
-        movieBookingData.setShowDate(new Date());
+        movieBookingData.setShowDate("2015-01-01");
         movieBookingData.setTheaterId("fhgvhj");
         bookingDataRepository.save(movieBookingData);
         List<BookingData> all = bookingDataRepository.findAll();

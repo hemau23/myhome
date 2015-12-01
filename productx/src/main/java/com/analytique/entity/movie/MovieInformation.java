@@ -12,6 +12,7 @@ public class MovieInformation {
 
     @Id
     String movieInformationId;
+
     String movieName;
     Integer duration;
     String certificate;
@@ -38,7 +39,7 @@ public class MovieInformation {
     }
 
     public String getMovieInformationId() {
-        return movieInformationId;
+        return this.movieInformationId;
     }
 
     public void setMovieInformationId(String movieInformationId) {

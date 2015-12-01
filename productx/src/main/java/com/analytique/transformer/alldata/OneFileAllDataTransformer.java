@@ -11,6 +11,7 @@ import com.analytique.repository.movie.MovieInformationRepository;
 import com.analytique.repository.theater.SeatClassRepository;
 import com.analytique.repository.theater.TheaterInformationRepository;
 import com.analytique.util.DateTimeUtil;
+import org.apache.commons.lang3.time.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +32,8 @@ public class OneFileAllDataTransformer implements GenericTransformer<List<OneFil
     public static final String OCCUPIED = "occupied";
     public static final String CAPACITY = "capacity";
     public static final char NO_SEAT = '0';
-    public static char BOOKED = '3';
-    public static char AVAILABLE = '2';
+    public static char BOOKED = '2';
+    public static char AVAILABLE = '3';
     public static final String CDT_DATE_TIME_FORMAT = "E MMM dd HH:mm:ss Z yyyy";
     public static final String AM_PM_DATE_TIME_FORMAT = "yyyyMMdd hh:mm a";
     public static final String INDIA_TIMEZONE = "Asia/Kolkata";
@@ -79,13 +80,17 @@ public class OneFileAllDataTransformer implements GenericTransformer<List<OneFil
                 showDateTime = DateTimeUtil.parseDate(india, "yyyyMMdd hh:mm a");
             }
             if (showDateTime == null) throw new AnalytiqueException("Show date time parsing error" + showDateTimeStr);
+
+            String showDate = DateTimeUtil.formatDate(showDateTime, "yyyy-MM-dd");
+            String showTime = DateTimeUtil.formatDate(showDateTime, "HH:mm:ss");
             String[] split = oneFileAllData.getSeatMap().split("\\|\\|");
             Map<String,String> seatClassMap=getSeatClass(split[0]);
             for (String seatClassName :seatClassMap.keySet()){
                 BookingData bookingData = new BookingData();
                 bookingData.setTheaterId(theaterInformation.getTheaterId());
                 bookingData.setMovieInformationId(movieInformation.getMovieInformationId());
-                bookingData.setShowDate(showDateTime);
+                bookingData.setShowDate(showDate);
+                bookingData.setShowTime(showTime);
                 bookingData.setSeatClassId(getSeatClassId(seatClassName.trim()));
                 Map<String, Integer> occupancyAndCapacityForSeatClass = getOccupancyAndCapacityForSeatClass(seatClassMap.get(seatClassName), split[1].trim());
                 bookingData.setCapacity(occupancyAndCapacityForSeatClass.get(CAPACITY));

@@ -11,7 +11,7 @@ public class FilmGenres {
     String movieId;
 
     public String getFilmGenresId() {
-        return filmGenresId;
+        return this.filmGenresId;
     }
 
     public void setFilmGenresId(String filmGenresId) {

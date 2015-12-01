@@ -10,7 +10,7 @@ public class Genres {
     String genreName;
 
     public String getGenreId() {
-        return genreId;
+        return this.genreId;
     }
 
     public void setGenreId(String genreId) {

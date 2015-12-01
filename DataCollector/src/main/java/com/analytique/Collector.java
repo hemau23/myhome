@@ -129,10 +129,12 @@ public class Collector {
                         for (MovieInfo movieInfo : showDetails) {
                             StringBuffer line = new StringBuffer();
                             for (ShowCallInfo showCallInfo : movieInfo.getShowCallDetails()) {
+                                if (showCallInfo.getShowUniqueId()==null) throw new Exception();
                                 line.append(movieInfo.getMovieName()).append(",")
                                         .append(movieInfo.getMovieExternalCode()).append(",")
                                         .append(movieInfo.getTheaterCode()).append(",")
                                         .append(showCallInfo.getShowDate()).append(" ").append(showCallInfo.getShowTime()).append(",")
+
                                         .append(showCallInfo.getShowUniqueId()).append("\n");
                             }
                             bufferedWriter.write(line.toString());
