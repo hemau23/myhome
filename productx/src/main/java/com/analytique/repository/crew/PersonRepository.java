@@ -10,8 +10,10 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
  * Created by hemant on 9/22/2015.
  */
 
-@RepositoryRestResource
+@RepositoryRestResource(collectionResourceRel = "person", path = "person")
 public interface PersonRepository extends MongoRepository<Person,String> {
 
-    Person findByFirstNameAndLastName(@Param("firstName") String firstName,@Param("lastName") String lastName);
+    Person findByName(@Param("name") String name);
+    Person findByPersonId(@Param("personId") String personId);
+
 }

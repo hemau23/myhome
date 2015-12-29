@@ -8,8 +8,10 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 /**
  * Created by hemant on 9/22/2015.
  */
-@RepositoryRestResource
+@RepositoryRestResource(collectionResourceRel = "role", path = "role")
 public interface RoleRepository extends MongoRepository<Role,String> {
 
     Role findByRoleName(@Param("roleName") String roleName);
+    Role findByRoleId(@Param("roleId") String roleId);
+
 }

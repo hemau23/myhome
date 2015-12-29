@@ -14,11 +14,11 @@ public class MovieRawInformation {
     @Id
     String movieRawId;
 
-    @DelimitedField(name="movieName")
+    @DelimitedField(name="EventTitle")
     String movieName;
 
     @DelimitedField(name="Length")
-    Integer duration;
+    String duration;
 
     @DelimitedField(name="EventCensor")
     String certificate;
@@ -26,11 +26,14 @@ public class MovieRawInformation {
     @DelimitedField(name="isHitSongs")
     boolean isHitSongs;
 
-    @DelimitedField(name="EventReleaseDate")
+    @DelimitedField(name="ReleaseDateCode")
     Date releaseDate;
 
     @DelimitedField(name="Director")
     String director;
+
+    @DelimitedField(name="EventMusic")
+    String musicDirector;
 
 
     @DelimitedField(name="Actors")
@@ -51,6 +54,24 @@ public class MovieRawInformation {
     @DelimitedField(name="TrailerURL")
     String trailerUrl;
 
+    @DelimitedField(name="FShareURL")
+    String fShareURL;
+
+    public String getFShareURL() {
+        return fShareURL;
+    }
+
+    public void setFShareURL(String fShareURL) {
+        this.fShareURL = fShareURL;
+    }
+
+    public String getMusicDirector() {
+        return musicDirector;
+    }
+
+    public void setMusicDirector(String musicDirector) {
+        this.musicDirector = musicDirector;
+    }
 
     public String getDirector() {
         return director;
@@ -116,11 +137,11 @@ public class MovieRawInformation {
         this.movieName = movieName;
     }
 
-    public Integer getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 

@@ -29,7 +29,7 @@ public class CastAndCrewRepositoryTest  extends IntegrationFlowTest {
         CastAndCrew castAndCrew = new CastAndCrew();
         castAndCrew.setMovieInformationId("sdc32");
         castAndCrew.setPersonId("aad233");
-        castAndCrew.setRolId("ds099");
+        castAndCrew.setRoleId("ds099");
         castAndCrewRepository.save(castAndCrew);
         List<CastAndCrew> all = castAndCrewRepository.findAll();
         assertEquals(all.size(),1);

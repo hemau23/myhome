@@ -17,9 +17,11 @@ public interface MovieInformationRepository extends MongoRepository<MovieInforma
 
     MovieInformation findByMovieName(@Param("movieName") String movieName);
 
-
     @Query(value="{}", fields="{ 'movieExternalCode' : 1}")
     List<MovieInformation> findByCertificateNull();
+
     MovieInformation findByMovieExternalCode(@Param("movieExternalCode") String movieExternalCode);
+
+
 
 }

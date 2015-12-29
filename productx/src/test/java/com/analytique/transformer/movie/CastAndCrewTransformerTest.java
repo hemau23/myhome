@@ -46,10 +46,10 @@ public class CastAndCrewTransformerTest extends IntegrationFlowTest{
         movieInformation.setMovieInformationId("werw32");
         movieInformation.setCertificate("U/A");
         movieInformation.setMovieName("brothers");
-        movieInformation.setReleaseDate(new Date());
+        movieInformation.setReleaseDate("20150101");
         movieInformation.setIsHitSongs(true);
         movieInformation.setCrew("Salman khan:Hero|Neha Dhupia:heroin|Anu Malik:Music Director");
-        movieInformation.setDuration(120);
+        movieInformation.setDuration("120");
         ArrayList<String> genres = new ArrayList<>();
         genres.add("comedy");
         genres.add("action");

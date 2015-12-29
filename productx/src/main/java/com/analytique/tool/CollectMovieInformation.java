@@ -5,6 +5,7 @@ import com.analytique.exception.AnalytiqueException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -17,7 +18,7 @@ public class CollectMovieInformation {
 
     public static final String HEADER_LIST="movieName,externalMovieCode,duration,certificate,isHitSongs,releaseDate,crew,genres,ratings\n";
     String url="http://in.bookmyshow.com/";
-    String fileName="c:/filename.mov";
+    String fileName="f:/filename.mov";
 
 
 
@@ -53,11 +54,10 @@ public class CollectMovieInformation {
                 Element element = li.next();
                 String movieName = element.select(".__name").text();
                 String movieCode= element.attr("data-event-code").toString();
-                Document movie = Jsoup.connect(url + element.select(".__name").attr("href")).get();
-                String writerName= movie.select(".__writer-name a").text();
-                String composerName = movie.select(".__composer-name a").text();
-                String directorName= movie.select(".__director-name a").text();
+                Document movie = Jsoup.connect("http://in.bookmyshow.com/movies/Tamasha-UA/ET00025390").get();
                 String percentage= movie.select(".__percentage").text();
+                String votes = movie.select(".__votes").text();
+                String criticsRating=movie.select(".critic-rating").select(".rating-stars").attr("data-value");
                 String ratingStars= movie.select(".rating-stars").attr("data-value");
                 Iterator<Element> genreIterator = movie.select(".__genre-tag").iterator();
                 String certificate = movie.select(".__censor use").attr("xlink:href").split("#")[1].replace("icon-", "");
@@ -80,7 +80,7 @@ public class CollectMovieInformation {
                     cast+=castName.text()+":support|";
                 }
 
-                String castAndCrew=cast+writerName+":Writer|"+composerName+":Music Director|"+directorName+":Director";
+               // String castAndCrew=cast+writerName+":Writer|"+composerName+":Music Director|"+directorName+":Director";
                 StringBuffer line= new StringBuffer();
                 line.append(movieName).append(",");
                 line.append(movieCode).append(",");
@@ -91,7 +91,7 @@ public class CollectMovieInformation {
                 Date parseDate = formatter.parse(realeseDate);
                 formatter = new SimpleDateFormat("yyyy-MM-dd");
                 line.append(formatter.format(parseDate).toString()).append(",");
-                line.append(castAndCrew).append(",");
+                //line.append(castAndCrew).append(",");
                 line.append(genres).append(",");
                 line.append(ratingStars).append("\n");
                 bufferedWriter.write(line.toString());

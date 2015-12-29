@@ -101,15 +101,16 @@ public class Collector {
     public static void main(String[] args) {
         List<String> theater = new ArrayList<String>();
         theater.add("esquare-university-road/cinema-pune-ESPN-MT/");
-        theater.add("victory-theatre-camp-pune/cinema-pune-ESVP-MT/");
+      //  theater.add("victory-theatre-camp-pune/cinema-pune-ESVP-MT/");
         theater.add("esquare-konark-kondhwa/cinema-pune-ESKP-MT");
         theater.add("esquare-vishal-pimpri/cinema-pune-ESPM-MT");
+        theater.add("esquare-xion-hinjewadi/cinema-pune-ESCH-MT");
 
         Date date = new Date();
         // Date date = DateUtils.addDays(date1, 1);
 
         try {
-            for (int i=0;i<3;i++) {
+            for (int i=0;i<1;i++) {
                 TimeZone istTimeZone = TimeZone.getTimeZone("Asia/Kolkata");
                 toDate.setTimeZone(istTimeZone);
                 toDateAndTime.setTimeZone(istTimeZone);
@@ -129,12 +130,11 @@ public class Collector {
                         for (MovieInfo movieInfo : showDetails) {
                             StringBuffer line = new StringBuffer();
                             for (ShowCallInfo showCallInfo : movieInfo.getShowCallDetails()) {
-                                if (showCallInfo.getShowUniqueId()==null) throw new Exception();
+                                //if (showCallInfo.getShowUniqueId()==null) throw new Exception();
                                 line.append(movieInfo.getMovieName()).append(",")
                                         .append(movieInfo.getMovieExternalCode()).append(",")
                                         .append(movieInfo.getTheaterCode()).append(",")
                                         .append(showCallInfo.getShowDate()).append(" ").append(showCallInfo.getShowTime()).append(",")
-
                                         .append(showCallInfo.getShowUniqueId()).append("\n");
                             }
                             bufferedWriter.write(line.toString());
@@ -145,7 +145,7 @@ public class Collector {
                 date = DateUtils.addDays(date, 1);
             }
         } catch (Exception e) {
-            System.out.println("not able to create file");
+            System.out.println("not able to create file"+e);
         }
         finally {
 

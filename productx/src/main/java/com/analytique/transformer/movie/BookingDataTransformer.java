@@ -79,11 +79,19 @@ public class BookingDataTransformer implements GenericTransformer<List<BookingRa
                     bookingData.setMovieInformationId(theaterInformation.getTheaterId());
                     bookingData.setMovieInformationId(bookingRawData.getMovieInformationId());
                     bookingData.setDataCollectionDate(bookingRawData.getDataCollectionDate());
-                    bookingData.setVote(bookingRawData.getVote());
                     bookingData.setShowDate(bookingRawData.getShowDate());
                     bookingData.setAverageRating(bookingRawData.getAverageRating());
                     bookingData.setPrice(bookingRawData.getPrice());
                     bookingData.setRowName(bookingRawData.getRowName());
+                    bookingData.setCriticsRatings(bookingRawData.getCriticsRatings());
+                    bookingData.setPercentage(bookingRawData.getPercentage());
+                    bookingData.setVotes(bookingRawData.getVotes());
+                    bookingData.setUserRatings(bookingRawData.getUserRatings());
+                    bookingData.setYouTubeHits(bookingRawData.getYouTubeHits());
+                    bookingData.setTomatoesRatings(bookingRawData.getTomatoesRatings());
+                    bookingData.setTomatoUserReviewsCount(bookingRawData.getTomatoUserReviewsCount());
+                    bookingData.setImdbRatings(bookingRawData.getImdbRatings());
+                    bookingData.setImdbVotesCount(bookingRawData.getImdbVotesCount());
                     bookingDataList.add(bookingData);
                 }
                 

@@ -4,14 +4,13 @@ import com.analytique.entity.bookingdata.MovieRawInformation;
 import com.analytique.entity.movie.Genres;
 import com.analytique.entity.movie.MovieInformation;
 import com.analytique.exception.AnalytiqueException;
-import com.analytique.repository.crew.PersonRepository;
-import com.analytique.repository.crew.RoleRepository;
 import com.analytique.repository.movie.GenresRepository;
 import com.analytique.repository.movie.MovieInformationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.integration.transformer.GenericTransformer;
 import org.springframework.stereotype.Component;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +19,8 @@ import java.util.List;
  */
 @Component
 public class MovieInformationTransformer implements GenericTransformer<List<MovieRawInformation>,List<MovieInformation>> {
+
+    final static SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
     @Autowired
     MovieInformationRepository movieInformationRepository;
@@ -33,18 +34,29 @@ public class MovieInformationTransformer implements GenericTransformer<List<Movi
 
         List<MovieInformation> movieInformations= new ArrayList<>();
         for (MovieRawInformation movieRawInformation :source){
-            MovieInformation movieInformation = movieInformationRepository.findByMovieName(movieRawInformation.getMovieName());
+            MovieInformation movieInformation = movieInformationRepository.findByMovieExternalCode(movieRawInformation.getMovieExternalCode());
             if (movieInformation == null) {
                 movieInformation = new MovieInformation();
+                movieInformation.setMovieExternalCode(movieRawInformation.getMovieExternalCode());
+                movieInformation.setMovieName(movieRawInformation.getMovieName());
             }
             movieInformation.setCertificate(movieRawInformation.getCertificate());
-            movieInformation.setReleaseDate(movieRawInformation.getReleaseDate());
-            movieInformation.setMovieName(movieRawInformation.getMovieName());
+            movieInformation.setReleaseDate(formatter.format(movieRawInformation.getReleaseDate()));
             movieInformation.setIsHitSongs(movieRawInformation.isHitSongs());
             movieInformation.setDuration(movieRawInformation.getDuration());
-            movieInformation.setCrew(movieRawInformation.getCrew());
+            movieInformation.setLanguage(movieRawInformation.getLanguage());
+            movieInformation.setRating(movieRawInformation.getRating());
+            movieInformation.setTrailerUrl(movieRawInformation.getTrailerUrl());
+            movieInformation.setFShareURL(movieRawInformation.getFShareURL());
+
+            StringBuffer crew= new StringBuffer();
+            crew.append("ACTOR:").append(movieRawInformation.getActor())
+                    .append("|DIRECTOR:").append(movieRawInformation.getDirector())
+                    .append("|MUSIC DIRECTOR:").append(movieRawInformation.getMusicDirector());
+
+            movieInformation.setCrew(crew.toString());
             String genres = movieRawInformation.getGenres();
-            String[] genreNames = genres.split("\\|");
+            String[] genreNames = genres.split(",");
             if (genreNames.length<1){
                 throw new AnalytiqueException("Genres not defined");
             }
@@ -57,9 +69,12 @@ public class MovieInformationTransformer implements GenericTransformer<List<Movi
                     alreadyExistGenre= genresRepository.save(alreadyExistGenre);
                 }
                 genreIds.add(alreadyExistGenre.getGenreId());
+                if (genreIds.size()>1) break;
 
             }
-            movieInformation.setGenreIds(genreIds);
+            movieInformation.setGenreId1(genreIds.get(0));
+            if (genreIds.size()>1)
+            movieInformation.setGenreId2(genreIds.get(1));
             movieInformations.add(movieInformation);
         }
         return movieInformations;

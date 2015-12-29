@@ -65,6 +65,8 @@ public class OneFileAllDataTransformer implements GenericTransformer<List<OneFil
         List<BookingData> bookingDataList = new ArrayList<>();
 
         String showDateTimeStr = oneFileAllData.getShowDateTime().trim();
+
+
         try {
             Date showDateTime = null;
             if (showDateTimeStr.contains("AM") || showDateTimeStr.contains("PM")) {
@@ -95,6 +97,15 @@ public class OneFileAllDataTransformer implements GenericTransformer<List<OneFil
                 Map<String, Integer> occupancyAndCapacityForSeatClass = getOccupancyAndCapacityForSeatClass(seatClassMap.get(seatClassName), split[1].trim());
                 bookingData.setCapacity(occupancyAndCapacityForSeatClass.get(CAPACITY));
                 bookingData.setOccupied(occupancyAndCapacityForSeatClass.get(OCCUPIED));
+                bookingData.setCriticsRatings(oneFileAllData.getCriticsRatings());
+                bookingData.setPercentage(oneFileAllData.getPercentage());
+                bookingData.setVotes(oneFileAllData.getVotes());
+                bookingData.setUserRatings(oneFileAllData.getUserRatings());
+                bookingData.setYouTubeHits(oneFileAllData.getYouTubeHits());
+                bookingData.setTomatoesRatings(oneFileAllData.getTomatoesRatings());
+                bookingData.setTomatoUserReviewsCount(oneFileAllData.getTomatoUserReviewsCount());
+                bookingData.setImdbRatings(oneFileAllData.getImdbRatings());
+                bookingData.setImdbVotesCount(oneFileAllData.getImdbVotesCount());
                 bookingDataList.add(bookingData);
             }
 

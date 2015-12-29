@@ -7,8 +7,9 @@ public class Person {
     @Id
     String personId;
 
-    String firstName;
-    String lastName;
+    String name;
+    Integer personRating;
+
 
     public String getPersonId() {
         return personId;
@@ -18,19 +19,19 @@ public class Person {
         this.personId = personId;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public Integer getPersonRating() {
+        return personRating;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setPersonRating(Integer personRating) {
+        this.personRating = personRating;
     }
 }

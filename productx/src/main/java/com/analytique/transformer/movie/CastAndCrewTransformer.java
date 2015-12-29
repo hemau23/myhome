@@ -1,6 +1,5 @@
 package com.analytique.transformer.movie;
 
-import com.analytique.entity.bookingdata.MovieRawInformation;
 import com.analytique.entity.crew.Person;
 import com.analytique.entity.crew.Role;
 import com.analytique.entity.movie.CastAndCrew;
@@ -32,39 +31,43 @@ public class CastAndCrewTransformer implements GenericTransformer<List<MovieInfo
     public List<CastAndCrew> transform(List<MovieInformation> source) {
         List<CastAndCrew> castAndCrews= new ArrayList<CastAndCrew>();
         for (MovieInformation movieInformation:source){
-            CastAndCrew castAndCrew=createOrUpdateCastAndCrew(movieInformation);
-            castAndCrews.add(castAndCrew);
+            List<CastAndCrew> castAndCrewList=createOrUpdateCastAndCrew(movieInformation);
+            if (castAndCrewList.size()>0)
+            castAndCrews.addAll(castAndCrewList);
         }
         return castAndCrews;
     }
 
-    private CastAndCrew createOrUpdateCastAndCrew(MovieInformation movieInformation) {
-        CastAndCrew castAndCrew = new CastAndCrew();
+    private List<CastAndCrew> createOrUpdateCastAndCrew(MovieInformation movieInformation) {
+        List<CastAndCrew> castAndCrewList = new ArrayList<CastAndCrew>();
         String crewInfo = movieInformation.getCrew();
         String[] castAndRoles = crewInfo.split("\\|");
         for (String castAndRole: castAndRoles){
-            String[] value = castAndRole.split(":");
-            assert value.length == 2 : " cast and roll not defined correctly";
-            String[] personData =value[0].split(" ");
-
-            Person person = personRepository.findByFirstNameAndLastName(personData[0], personData[1]);
-            if (person == null) {
-                person = new Person();
-                person.setFirstName(personData[0]);
-                person.setLastName(personData[1]);
-                person = personRepository.save(person);
+            String[] crewList = castAndRole.split(":");
+            assert crewList.length == 2 : " cast and roll not defined correctly";
+            String roleName =crewList[0];
+            for (String name: crewList[1].split(",")) {
+                CastAndCrew castAndCrew = new CastAndCrew();
+                Person person = personRepository.findByName(name);
+                if (person == null) {
+                    person = new Person();
+                    person.setPersonRating(1);
+                    person.setName(name);
+                    person = personRepository.save(person);
+                }
+                castAndCrew.setPersonId(person.getPersonId());
+                Role role = roleRepository.findByRoleName(roleName);
+                if (role == null) {
+                    role = new Role();
+                    role.setRoleName(roleName);
+                    role = roleRepository.save(role);
+                }
+                castAndCrew.setMovieInformationId(movieInformation.getMovieInformationId());
+                castAndCrew.setRoleId(role.getRoleId());
+                castAndCrewList.add(castAndCrew);
             }
-            castAndCrew.setPersonId(person.getPersonId());
-            Role role = roleRepository.findByRoleName(value[1]);
-            if (role == null){
-                role=new Role();
-                role.setRoleName(value[1]);
-                role = roleRepository.save(role);
-            }
-            castAndCrew.setMovieInformationId(movieInformation.getMovieInformationId());
-            castAndCrew.setRolId(role.getRolId());
         }
-        return castAndCrew;
+        return castAndCrewList;
 
     }
 }

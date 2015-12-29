@@ -5,15 +5,15 @@ import org.springframework.data.annotation.Id;
 public class Role {
 
     @Id
-    String rolId;
+    String roleId;
     String roleName;
 
-    public String getRolId() {
-        return rolId;
+    public String getRoleId() {
+        return roleId;
     }
 
-    public void setRolId(String rolId) {
-        this.rolId = rolId;
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
     }
 
     public String getRoleName() {

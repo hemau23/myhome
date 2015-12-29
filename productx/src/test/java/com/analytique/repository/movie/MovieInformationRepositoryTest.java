@@ -28,10 +28,10 @@ public class MovieInformationRepositoryTest  extends IntegrationFlowTest {
     void testSaveAll(){
         MovieInformation movieInformation = new MovieInformation();
         movieInformation.setCertificate("U/A");
-        movieInformation.setDuration(120);
+        movieInformation.setDuration("120");
         movieInformation.setIsHitSongs(true);
         movieInformation.setMovieName("Brother");
-        movieInformation.setReleaseDate(new Date());
+        movieInformation.setReleaseDate("20150101");
         movieInformationRepository.save(movieInformation);
         List<MovieInformation> all = movieInformationRepository.findAll();
         assertEquals(all.size(),1);

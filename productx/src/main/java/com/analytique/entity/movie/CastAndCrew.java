@@ -8,7 +8,7 @@ public class CastAndCrew {
     String castAndCrewId;
     String movieInformationId;
     String personId;
-    String rolId;
+    String roleId;
 
     public String getCastAndCrewId() {
         return this.castAndCrewId;
@@ -34,11 +34,11 @@ public class CastAndCrew {
         this.personId = personId;
     }
 
-    public String getRolId() {
-        return rolId;
+    public String getRoleId() {
+        return roleId;
     }
 
-    public void setRolId(String rolId) {
-        this.rolId = rolId;
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
     }
 }

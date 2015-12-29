@@ -9,7 +9,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 /**
  * Created by hemant on 9/19/2015.
  */
-@RepositoryRestResource
+@RepositoryRestResource(collectionResourceRel = "genres", path = "genres")
 public interface GenresRepository extends MongoRepository<Genres,String> {
 
     Genres findByGenreName(@Param("genreName") String genreName);

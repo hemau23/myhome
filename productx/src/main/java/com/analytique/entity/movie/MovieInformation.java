@@ -2,9 +2,6 @@ package com.analytique.entity.movie;
 
 import org.springframework.data.annotation.Id;
 
-import java.util.Date;
-import java.util.List;
-
 /**
  * Created by hemant on 9/10/2015.
  */
@@ -14,13 +11,66 @@ public class MovieInformation {
     String movieInformationId;
 
     String movieName;
-    Integer duration;
+    String duration;
     String certificate;
     boolean isHitSongs;
-    Date releaseDate;
-    String crew;
-    List<String> genreIds;
+    String releaseDate;
+    String genreId1;
+    String genreId2;
     String movieExternalCode;
+    String rating;
+    String language;
+    String trailerUrl;
+    String crew;
+    String fShareURL;
+
+    public String getFShareURL() {
+        return fShareURL;
+    }
+
+    public void setFShareURL(String fShareURL) {
+        this.fShareURL = fShareURL;
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public String getCrew() {
+        return crew;
+    }
+
+    public void setCrew(String crew) {
+        this.crew = crew;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public String getTrailerUrl() {
+        return trailerUrl;
+    }
+
+    public void setTrailerUrl(String trailerUrl) {
+        this.trailerUrl = trailerUrl;
+    }
 
     public String getMovieExternalCode() {
         return movieExternalCode;
@@ -30,13 +80,6 @@ public class MovieInformation {
         this.movieExternalCode = movieExternalCode;
     }
 
-    public Date getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(Date releaseDate) {
-        this.releaseDate = releaseDate;
-    }
 
     public String getMovieInformationId() {
         return this.movieInformationId;
@@ -62,11 +105,11 @@ public class MovieInformation {
         this.isHitSongs = isHitSongs;
     }
 
-  public Integer getDuration() {
+  public String getDuration() {
       return duration;
   }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 
@@ -78,20 +121,20 @@ public class MovieInformation {
         this.certificate = certificate;
     }
 
-    public String getCrew() {
-        return crew;
-    }
-    public void setCrew(String crew) {
-        this.crew = crew;
+
+    public String getGenreId1() {
+        return genreId1;
     }
 
-    public List<String> getGenreIds() {
-        return genreIds;
+    public void setGenreId1(String genreId1) {
+        this.genreId1 = genreId1;
     }
 
-    public void setGenreIds(List<String> genreIds) {
-        this.genreIds = genreIds;
+    public String getGenreId2() {
+        return genreId2;
     }
 
-
+    public void setGenreId2(String genreId2) {
+        this.genreId2 = genreId2;
+    }
 }

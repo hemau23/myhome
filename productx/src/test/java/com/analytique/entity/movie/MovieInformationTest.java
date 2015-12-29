@@ -33,9 +33,9 @@ public class MovieInformationTest  extends IntegrationFlowTest {
 
         MovieInformation movieInformation = new MovieInformation();
         movieInformation.setCertificate("U/A");
-        movieInformation.setDuration(120);
+        movieInformation.setDuration("120");
         movieInformation.setIsHitSongs(true);
-        movieInformation.setReleaseDate(DateTimeUtil.parseDate("2015-01-01", "yyyy-dd-mm"));
+        movieInformation.setReleaseDate("2015-01-01");
         movieInformation.setMovieName("Talvaar");
         movieInformationRepository.save(movieInformation);
         List<MovieInformation> all = movieInformationRepository.findAll();

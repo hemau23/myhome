@@ -98,7 +98,7 @@ public class MovieInformation {
             keyList.add("EventCode");
             keyList.add("Ratings");
             keyList.add("Event_Message");
-            keyList.add("EventifierID");
+            //keyList.add("EventifierID");
             keyList.add("Language");
             //keyList.add("CanUserRate");
             //keyList.add("IsComingSoon");
