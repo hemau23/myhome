@@ -1,0 +1,5 @@
+rootProject.name = 'selfservice'
+include 'analytique-vaadin'
+include 'deployable'
+include 'analytique-service'
+

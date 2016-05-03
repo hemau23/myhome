@@ -1,0 +1,3 @@
+externalTheaterCode,theaterName,isMultiplex,numberOfScreen,address,city,pinCode,state,country,seatClassNames
+ESQR,ESQURE CINEMA,true,40,ESQUARE CHOWK,PUNE,440016,Maharashtra,INDIA,PLATINUM:PLM|GOLD:GLD
+

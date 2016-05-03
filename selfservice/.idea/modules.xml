@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/analytique-service/analytique-service.iml" filepath="$PROJECT_DIR$/.idea/modules/analytique-service/analytique-service.iml" group="analytique-service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/analytique-service/analytique-service_main.iml" filepath="$PROJECT_DIR$/.idea/modules/analytique-service/analytique-service_main.iml" group="analytique-service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/analytique-service/analytique-service_test.iml" filepath="$PROJECT_DIR$/.idea/modules/analytique-service/analytique-service_test.iml" group="analytique-service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/analytique-vaadin/analytique-vaadin.iml" filepath="$PROJECT_DIR$/.idea/modules/analytique-vaadin/analytique-vaadin.iml" group="analytique-vaadin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/analytique-vaadin/analytique-vaadin_main.iml" filepath="$PROJECT_DIR$/.idea/modules/analytique-vaadin/analytique-vaadin_main.iml" group="analytique-vaadin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/analytique-vaadin/analytique-vaadin_test.iml" filepath="$PROJECT_DIR$/.idea/modules/analytique-vaadin/analytique-vaadin_test.iml" group="analytique-vaadin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/deployable/deployable.iml" filepath="$PROJECT_DIR$/.idea/modules/deployable/deployable.iml" group="deployable" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/deployable/deployable_main.iml" filepath="$PROJECT_DIR$/.idea/modules/deployable/deployable_main.iml" group="deployable" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/deployable/deployable_test.iml" filepath="$PROJECT_DIR$/.idea/modules/deployable/deployable_test.iml" group="deployable" />
+      <module fileurl="file://C://selfservice/.idea/modules/selfservice.iml" filepath="C://selfservice/.idea/modules/selfservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/selfservice_main.iml" filepath="$PROJECT_DIR$/.idea/modules/selfservice_main.iml" group="selfservice" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/selfservice_test.iml" filepath="$PROJECT_DIR$/.idea/modules/selfservice_test.iml" group="selfservice" />
+    </modules>
+  </component>
+</project>
